@@ -40,16 +40,23 @@ if($_POST['zd'])
 
 if($_GET['promo'])
 {
+    
 	if($user_ile_money>=$ust['ust_ogloszenie_promo'])
 	{
-            $up="UPDATE ".$pre."user SET user_money=user_money-".$ust['oglp']." WHERE user_id='".db_real_escape_string($_SESSION['user_id'])."'";  
-            db_query($up);
+            // sprawdz czy ogloszenie bylo juz wypromowane dzisiaj
+            // aby uniknac pobierania punktow za odswiezenie strony
+    
+            $checkIfPromoTodayQuery="select * from ".$pre."faq WHERE faq_id=".(int)$_GET['promo']." and faq_featured = 1 and faq_dateadded like '".date('Y-m-d')."%'"; 
+            
+            if(db_query($checkIfPromoTodayQuery)->num_rows==0){
+                $up="UPDATE ".$pre."user SET user_money=user_money-".$ust['oglp']." WHERE user_id='".db_real_escape_string($_SESSION['user_id'])."'";  
+                db_query($up);
 
-            $promoQuery="UPDATE ".$pre."faq SET faq_featured=1, faq_dateadded = '".date('Y-m-d H:i:s')."' WHERE faq_id=".(int)$_GET['promo'];  
+                $promoQuery="UPDATE ".$pre."faq SET faq_featured=1, faq_dateadded = '".date('Y-m-d H:i:s')."' WHERE faq_id=".(int)$_GET['promo'];  
 
-            db_query($promoQuery);
-
-            $smarty->assign("addogl","1");
+                db_query($promoQuery);
+                $smarty->assign("promoogl","1");
+            }
 	}
 	else
 	{

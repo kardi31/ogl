@@ -16,7 +16,8 @@
 <br><br>
 
 {if $zampkt==1}<div id="ukryj"><center><b style="color:red;">Masz zamało punktów</b></center></div>{/if}
-{if $addogl==1}<div id="ukryj"><center><b style="color:lime;">Dodano</b></center></div>{/if}
+{if $addogl==1}<div id="ukryj"><center><b style="color:lime;">Ogłoszenie zostało wypromowane</b></center></div>{/if}
+{if $promoogl==1}<div id="ukryj"><center><b style="color:lime;">Dodano</b></center></div>{/if}
 {if $uppol==1}<div id="ukryj"><center><b style="color:red;">Uzupełnij wszystkie pola</b></center></div>{/if}
 <form action="panel-ogl.php" method="POST">
 
@@ -39,7 +40,7 @@
 {if $delc==1}<div id="ukryj"><center><b style="color:red;">{$lang[293]}</b></center></div>{/if}
 {section name=id loop=$faq_id}
 
-<b>{$faq_nazwa[id]}</b>  {$faq_data[id]}  <a style="float:right;" href="panel-ogl.php?del={$faq_id[id]}">{$lang[294]}</a> - <a style="float:right;margin-right:20px;" href="panel-ogl.php?promo={$faq_id[id]}">Promuj({$ust_ogloszenie_promo} PKT)</a><br>
+<b>{$faq_nazwa[id]}</b>  {$faq_data[id]}  <a class="usunOgloszenie" href="panel-ogl.php?del={$faq_id[id]}">{$lang[294]}</a>  <a class="promujOgloszenie" href="panel-ogl.php?promo={$faq_id[id]}">Promuj({$ust_ogloszenie_promo} PKT)</a><br>
 
 {$faq_opis[id]}
 <hr><br>

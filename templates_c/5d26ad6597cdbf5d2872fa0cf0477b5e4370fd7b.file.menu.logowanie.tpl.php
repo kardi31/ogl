@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-19 20:10:43
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:10:46
          compiled from ".\templates\new_red\menu.logowanie.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21675564e1eb340d0f5-31065498%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5d26ad6597cdbf5d2872fa0cf0477b5e4370fd7b' => 
     array (
       0 => '.\\templates\\new_red\\menu.logowanie.tpl',
-      1 => 1447958270,
+      1 => 1448017089,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_564e1eb3610e15_42367431',
   'variables' => 
   array (
     'user_id' => 0,
@@ -49,8 +51,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'user_ile_men' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_564e1eb3610e15_42367431',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_564e1eb3610e15_42367431')) {function content_564e1eb3610e15_42367431($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['user_id']->value!='') {?>
 <center>

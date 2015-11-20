@@ -15,6 +15,8 @@ echo'
 <td width="20%" class="td_hover"'; if($_GET['action']=="popr"){echo' bgcolor="#ffb217"';} echo' style="font-weight:bold;font-size:14px;border:1px solid silver;padding:5px 5px 5px 5px;text-align:center;"><a href="index.php?page=ustawienia&action=popr"><b>'.$lang['358'].'</b></a></td>
 <td width="20%" class="td_hover"'; if($_GET['action']=="woj"){echo' bgcolor="#ffb217"';} echo' style="font-weight:bold;font-size:14px;border:1px solid silver;padding:5px 5px 5px 5px;text-align:center;"><a href="index.php?page=ustawienia&action=woj"><b>'.$lang['45'].'</b></a></td>
 <td width="20%" class="td_hover"'; if($_GET['action']=="dane"){echo' bgcolor="#ffb217"';} echo' style="font-weight:bold;font-size:14px;border:1px solid silver;padding:5px 5px 5px 5px;text-align:center;"><a href="index.php?page=ustawienia&action=dane"><b>Dane</b></a></td>
+</tr><tr>
+<td width="20%" class="td_hover"'; if($_GET['action']=="tlo"){echo' bgcolor="#ffb217"';} echo' style="font-weight:bold;font-size:14px;border:1px solid silver;padding:5px 5px 5px 5px;text-align:center;"><a href="index.php?page=ustawienia&action=tlo"><b>Tło strony</b></a></td>
 
 </tr>
 </table>
@@ -188,7 +190,10 @@ $i++;
 }
 echo'</table>';
 }
-
+if($_GET['action']=="tlo" )
+{
+    include('/module/tlo.php');
+}
 
 if($_GET['action']=="woj" )
 {
@@ -427,6 +432,9 @@ echo'
 </tr>
 <tr>
 <td valign="top">Dodanie ogłoszenia</td><td><input type="text" name="oglp" value="'.$ust['oglp'].'" style="width:200px;"><br>0 = Darmowy</td>
+</tr>
+<tr>
+<td valign="top">Promowanie ogłoszenia</td><td><input type="text" name="ust_ogloszenie_promo" value="'.$ust['ust_ogloszenie_promo'].'" style="width:200px;"><br>0 = Darmowy</td>
 </tr>
 <tr>
 <td valign="top">'.$lang['91'].'</td><td valign="top">

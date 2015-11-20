@@ -105,7 +105,7 @@
 {/literal}
 </head>
 
-<body>
+<body style="background-image:url('/images/bg/{$background}')">
 {literal}
 <div id="fb-root"></div>
 

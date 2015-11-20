@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-19 20:36:54
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 17:13:57
          compiled from ".\templates\new_red\subheader.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11937564e1eb3d8e492-40904968%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9fb95e21a9ed795f64170dfc4539d7b53efa83e2' => 
     array (
       0 => '.\\templates\\new_red\\subheader.tpl',
-      1 => 1447961649,
+      1 => 1448036037,
       2 => 'file',
     ),
   ),
@@ -28,6 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'czat_id' => 0,
     'czat_login' => 0,
     'user_id' => 0,
+    'background' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -146,7 +147,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 </head>
 
-<body>
+<body style="background-image:url('/images/bg/<?php echo $_smarty_tpl->tpl_vars['background']->value;?>
+')">
 
 <div id="fb-root"></div>
 

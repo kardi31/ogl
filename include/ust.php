@@ -171,11 +171,12 @@ while ($row = db_fetch($result))
 
 	$ust['pi3']=$row['ust_pi3'];
 	$ust['ust_ogloszenie_promo']=$row['ust_ogloszenie_promo'];
+	$ust['ust_background']=$row['ust_background'];
 }
 
 if($ust['wiek']>=1)
 {
-
+    
 }
 else
 {

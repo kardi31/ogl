@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 09:21:57
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:22:10
          compiled from ".\templates\new_red\panel-ogl.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9802564e263c1be166-23517928%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4293c9e0e1a9ff24abbc7def041be5b3771b9484' => 
     array (
       0 => '.\\templates\\new_red\\panel-ogl.tpl',
-      1 => 1448007716,
+      1 => 1448018524,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'oglp' => 0,
     'zampkt' => 0,
     'addogl' => 0,
+    'promoogl' => 0,
     'uppol' => 0,
     'p_nazwa' => 0,
     'p_opis' => 0,
@@ -58,7 +59,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <br><br>
 
 <?php if ($_smarty_tpl->tpl_vars['zampkt']->value==1) {?><div id="ukryj"><center><b style="color:red;">Masz zamało punktów</b></center></div><?php }?>
-<?php if ($_smarty_tpl->tpl_vars['addogl']->value==1) {?><div id="ukryj"><center><b style="color:lime;">Dodano</b></center></div><?php }?>
+<?php if ($_smarty_tpl->tpl_vars['addogl']->value==1) {?><div id="ukryj"><center><b style="color:lime;">Ogłoszenie zostało wypromowane</b></center></div><?php }?>
+<?php if ($_smarty_tpl->tpl_vars['promoogl']->value==1) {?><div id="ukryj"><center><b style="color:lime;">Dodano</b></center></div><?php }?>
 <?php if ($_smarty_tpl->tpl_vars['uppol']->value==1) {?><div id="ukryj"><center><b style="color:red;">Uzupełnij wszystkie pola</b></center></div><?php }?>
 <form action="panel-ogl.php" method="POST">
 
@@ -110,9 +112,9 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smar
 
 <b><?php echo $_smarty_tpl->tpl_vars['faq_nazwa']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 </b>  <?php echo $_smarty_tpl->tpl_vars['faq_data']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-  <a style="float:right;" href="panel-ogl.php?del=<?php echo $_smarty_tpl->tpl_vars['faq_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+  <a class="usunOgloszenie" href="panel-ogl.php?del=<?php echo $_smarty_tpl->tpl_vars['faq_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 "><?php echo $_smarty_tpl->tpl_vars['lang']->value[294];?>
-</a> - <a style="float:right;margin-right:20px;" href="panel-ogl.php?promo=<?php echo $_smarty_tpl->tpl_vars['faq_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+</a>  <a class="promujOgloszenie" href="panel-ogl.php?promo=<?php echo $_smarty_tpl->tpl_vars['faq_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 ">Promuj(<?php echo $_smarty_tpl->tpl_vars['ust_ogloszenie_promo']->value;?>
  PKT)</a><br>
 

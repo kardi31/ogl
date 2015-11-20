@@ -383,4 +383,97 @@ img {
 	-moz-border-radius: 10px; 
 	border-radius: 10px;
 }
+.chooseBgImage{
+    margin-top:20px;
+}
+.chooseBgImage label{
+    width:31%;
+    display:block;
+    float:left;
+    padding-left:1%;
+    padding-right:1%;
+}
 
+.chooseBgImage label img{
+    max-width:100%;
+}
+
+.chooseBgImage:after{
+    display:block;
+    clear:both;
+    content:" ";
+}
+.chooseBgImage label input{
+    visibility: hidden;
+}
+.chooseBgImage label img {
+    border:2px solid transparent;
+}
+.chooseBgImage label.checked img {
+    border:2px solid red;
+}
+
+.clearfix:after,.clearfix:before{
+    display:block;
+    clear:both;
+    content:" ";
+}
+
+.uploadFileForm{
+    margin-top:10px;
+}
+
+.uploadFileForm input[type="file"]{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.uploadFileForm button{
+    margin-top:10px;
+}
+.btn-primary{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn-info {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.btn{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

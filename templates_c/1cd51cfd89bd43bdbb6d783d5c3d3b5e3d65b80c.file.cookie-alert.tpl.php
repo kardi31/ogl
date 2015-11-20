@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-19 20:10:44
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:10:46
          compiled from ".\templates\new_red\cookie-alert.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5085564e1eb4221489-94783972%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1cd51cfd89bd43bdbb6d783d5c3d3b5e3d65b80c' => 
     array (
       0 => '.\\templates\\new_red\\cookie-alert.tpl',
-      1 => 1447958270,
+      1 => 1448017089,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_564e1eb422e5c9_24602439',
   'variables' => 
   array (
     'cookie_on' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'site_url' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_564e1eb422e5c9_24602439',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_564e1eb422e5c9_24602439')) {function content_564e1eb422e5c9_24602439($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['cookie_on']->value=="1"&&$_smarty_tpl->tpl_vars['cookie_get']->value!="1") {?>
 

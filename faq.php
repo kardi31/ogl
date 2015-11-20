@@ -41,6 +41,7 @@ $faq_user_login[]=$row['user_login'];
 $faq_user_loginn[]=namen($row['user_login']);
 $faq_img[]=$row['user_fotka'];
 $faq_plecnr[]=$row['user_plec'];
+$faq_featured[]=$row['faq_featured'];
 }
 
 $smarty->assign("faq_id",$faq_id);
@@ -52,7 +53,7 @@ $smarty->assign("faq_user_login",$faq_user_login);
 $smarty->assign("faq_user_loginn",$faq_user_loginn);
 $smarty->assign("faq_img",$faq_img);
 $smarty->assign("faq_plecnr",$faq_plecnr);
-
+$smarty->assign("faq_featured",$faq_featured);
 $smarty->assign("title",'Ogłoszenia - '.$ust['nazwa']);
 
 $smarty->display($ust['templates'].'/faq.tpl');

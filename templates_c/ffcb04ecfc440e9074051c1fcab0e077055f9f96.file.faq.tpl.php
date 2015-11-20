@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-19 20:48:46
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:32:35
          compiled from ".\templates\new_red\faq.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8149564e279e5e03e0-17227376%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ffcb04ecfc440e9074051c1fcab0e077055f9f96' => 
     array (
       0 => '.\\templates\\new_red\\faq.tpl',
-      1 => 1447958274,
+      1 => 1448019154,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_564e279e667567_37230538',
   'variables' => 
   array (
     'faq_nazwa' => 0,
+    'faq_featured' => 0,
     'faq_user_loginn' => 0,
     'faq_user_id' => 0,
     'faq_user_login' => 0,
@@ -28,8 +31,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'faq_opis' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_564e279e667567_37230538',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_564e279e667567_37230538')) {function content_564e279e667567_37230538($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['templa']->value)."/subheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -68,7 +69,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['index_next'] = $_smart
 $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['id']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['id']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['total']);
 ?>
-<div style="border-bottom:1px solid #adadad;margin-bottom:15px;padding-bottom:10px;clear:both;">
+<div class="ogloszenieRow <?php if ($_smarty_tpl->tpl_vars['faq_featured']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]==1) {?>featured<?php }?>">
 	<b style="font-size:14px;"><?php echo $_smarty_tpl->tpl_vars['faq_nazwa']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 </b>
 	<div style="padding:4px 0 6px 0;">Dodał(a): <a href="profil/<?php echo $_smarty_tpl->tpl_vars['faq_user_loginn']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>

@@ -9,7 +9,7 @@
 				<h1 class="ng">Ogłoszenia</h1>
 		<p>
 {section name=id loop=$faq_nazwa}
-<div style="border-bottom:1px solid #adadad;margin-bottom:15px;padding-bottom:10px;clear:both;">
+<div class="ogloszenieRow {if $faq_featured[id]==1}featured{/if}">
 	<b style="font-size:14px;">{$faq_nazwa[id]}</b>
 	<div style="padding:4px 0 6px 0;">Dodał(a): <a href="profil/{$faq_user_loginn[id]}/{$faq_user_id[id]}"><b>{$faq_user_login[id]}</b></a> Dnia: {$faq_data[id]}</div>
 	<div style="clear:both;height:110px;">
