@@ -1,0 +1,165 @@
+Options FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^szukaj/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/$ szukaj.php?od=$1&do=$2&plec=$3&online=$4&zdjecie=$5&woj=$6&miasto=$7
+
+RewriteRule ^szukaj/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/s-([0-9]*)$ szukaj.php?od=$1&do=$2&plec=$3&online=$4&zdjecie=$5&woj=$6&miasto=$7&strona=$8
+
+RewriteRule ^ocen/([0-9]*)/(.*)/([0-9]*)$ ocen.php?id=$1&t=$2&ocena=$3
+
+RewriteRule ^shoutbox/$ shoutbox.php
+
+RewriteRule ^temat/([0-9]*)/(.*)_(.*):(.*)$ temat.php?id=$1&go=$3&stan=$4
+
+RewriteRule ^temat/([0-9]*)/(.*)$ temat.php?id=$1
+
+RewriteRule ^grupy/(.*)/(.*)/$ grupy.php?go=$1&stan=$2
+
+RewriteRule ^grupy/$ grupy.php
+
+RewriteRule ^grupa/([0-9]*)/(.*)_(.*):(.*)$ grupa.php?id=$1&go=$3&stan=$4
+
+RewriteRule ^grupa/([0-9]*)/(.*)$ grupa.php?id=$1
+
+RewriteRule ^prezent/$ gift.php
+
+RewriteRule ^znajdz/$ znajdz.php
+
+RewriteRule ^faq/$ faq.php
+
+RewriteRule ^kobiety/$ women.php
+
+RewriteRule ^img-img.jpg$ include/kod.php
+
+RewriteRule ^online/$ online_user.php
+
+RewriteRule ^doladuj-konto/$ kup.php
+
+RewriteRule ^mezczyzni/$ men.php
+
+RewriteRule ^zaproszenia/$ zaproszenia.php
+
+RewriteRule ^zaproszenia/([0-9]*)/(.*)$ zaproszenia.php?action=&id=$1&v=$2
+
+RewriteRule ^zgloszenie/user-([0-9]*)$ zgloszenie.php?id=$1
+
+RewriteRule ^zgloszenie/user-([0-9]*)-(.*)$ zgloszenie.php?id=$1&z=ok
+
+RewriteRule ^dodaj-znajomego/user-([0-9]*)$ dodaj-znajomego.php?id=$1
+
+RewriteRule ^prezent/user-([0-9]*)$ gift.php?id=$1
+
+RewriteRule ^prezent/user-([0-9]*)-([0-9]*)$ gift.php?id=$1&stan=$2
+
+RewriteRule ^dodaj-znajomego/user-([0-9]*)-(.*)$ dodaj-znajomego.php?id=$1&z=ok
+
+RewriteRule ^kobiety/s-([0-9]*)$ women.php?strona=$1
+
+RewriteRule ^ankieta/([0-9]*)$ ankieta.php?stan=$1
+
+RewriteRule ^mezczyzni/s-([0-9]*)$ men.php?strona=$1
+
+RewriteRule ^online/s-([0-9]*)$ online_user.php?strona=$1
+
+RewriteRule ^artykuly/$ kategorie_art.php
+
+RewriteRule ^news/$ news_index.php
+
+RewriteRule ^news/s-([0-9]*)$ news_index.php?strona=$1
+
+RewriteRule ^news/([0-9]*)/(.*)$ news.php?id=$1
+
+RewriteRule ^page/([0-9]*)/(.*)$ page.php?id=$1
+
+RewriteRule ^doladuj-konto/stan:([0-9]*)$ kup.php?stan=$1
+
+RewriteRule ^pw/(.*)/([0-9]*)/(.*)$ pw.php?action=$1&id=$2&v=$3
+
+RewriteRule ^pw/([0-9]*)/(.*)$ pw.php?action=&id=$1&v=$2
+
+RewriteRule ^pw/(.*)/([0-9]*)$ pw.php?action=$1&id=$2
+
+RewriteRule ^pw/(.*)/$ pw.php?action=$1
+
+RewriteRule ^pw/$ pw.php
+
+RewriteRule ^register/$ register.php
+
+RewriteRule ^zapomniane-haslo/$ zapomniane.haslo.php
+
+RewriteRule ^regulamin/$ regulamin.php
+
+RewriteRule ^user/kto-ocenial-zdjecia/$ panel-ko.php
+
+RewriteRule ^user/kto-ogladal-profil/$ panel-kv.php
+
+RewriteRule ^user/kto-ocenial-zdjecia/([0-9]*)$ panel-ko.php?strona=$1
+
+RewriteRule ^user/kto-ogladal-profil/([0-9]*)$ panel-kv.php?strona=$1
+
+RewriteRule ^user/usun-konto/$ usun-konto.php
+
+RewriteRule ^user/usun-konto/([0-9]*)$ usun-konto.php?stan=$1
+
+RewriteRule ^user/moje-zdjecia/$ moje-zdjecia.php
+
+RewriteRule ^user/moje-filmy/$ moje-filmy.php
+
+RewriteRule ^user/moje-zdjecia/([0-9]*)$ moje-zdjecia.php?stan=$1
+
+RewriteRule ^user/znajomi/$ user-znajomi.php
+
+RewriteRule ^user/znajomi/([0-9]*)$ user-znajomi.php?stan=$1
+
+RewriteRule ^user/znajomi/(.*)-([0-9]*)$ user-znajomi.php?v=$1&id=$2
+
+RewriteRule ^user/moje-zdjecia/(.*)-([0-9]*)$ moje-zdjecia.php?v=$1&id=$2
+
+RewriteRule ^user/moje-filmy/(.*)-([0-9]*)$ moje-filmy.php?v=$1&id=$2
+
+RewriteRule ^user/moje-filmy/([0-9]*)$ moje-filmy.php?stan=$1
+
+RewriteRule ^user/zmien-haslo/$ zmien-haslo.php
+
+RewriteRule ^user/zmien-haslo/([0-9]*)$ zmien-haslo.php?stan=$1
+
+RewriteRule ^user/panel/$ panel.php
+
+RewriteRule ^user/imprezy/$ panel-imprezy.php
+
+RewriteRule ^user/imprezy/s-([0-9]*)$ panel-imprezy.php?stan=$1
+
+RewriteRule ^user/panel/([0-9]*)$ panel.php?stan=$1
+
+RewriteRule ^user/imprezy/del-([0-9]*)$ panel-imprezy.php?del=$1
+
+RewriteRule ^profil/(.*)/([0-9]*)/(.*)-img([0-9]*)$ profil.php?id=$2&v=$3&idf=$4
+
+RewriteRule ^profil/(.*)/([0-9]*)/(.*)$ profil.php?id=$2&v=$3
+
+RewriteRule ^profil/(.*)/([0-9]*)$ profil.php?id=$2
+
+RewriteRule ^user/(.*)/([0-9]*)$ profil.php?id=$2
+
+RewriteRule ^kontakt/$ kontakt.php
+
+RewriteRule ^polityka/$ polityka.php
+
+RewriteRule ^s([0-9]*)$ index.php?strona=$1
+
+RewriteRule ^galerie/s([0-9]*)$ galeria.php?strona=$1
+
+RewriteRule ^page/([0-9]*)/(.*)$ page.php?id=$1
+
+RewriteRule aktywacja,(.*).html aktywacja.php?kod=$1
+
+RewriteRule index.html index.php
+
+
+
+<Files ~ "\.tpl$">
+	Order allow,deny
+	Deny from all
+</Files>
+
+

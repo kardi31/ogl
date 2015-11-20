@@ -1,0 +1,15 @@
+1. Mo¿esz zainstalowaæ jedn¹ kopie skryptu na stronie internetowej i u¿ywaæ jej bezterminowo.
+
+   a. W przypadku sprzeda¿y serwisu opartego na tym skrypcie nale¿y zakupiæ ponownie skrypt by móc dalej z niego korzystaæ.
+
+2. Zabrania siê odsprzeda¿y, wypo¿yczania oraz darmowego udostêpniania skryptu w jakiejkolwiek formie bez pisemnego zezwolenia autora.
+
+3. Kod Ÿród³owy skryptu mo¿e byæ modyfikowany (na w³asne ryzyko), ale modyfikacji i zmodyfikowanego kodu nie mo¿na w ¿adnej formie rozpowszechniaæ, sprzedawaæ, udostêpniaæ bez pisemnej zgody autora.
+
+4. Autor nie odpowiada za jakiekolwiek straty wynik³e z u¿ywania skryptu, w tym utratê spodziewanych korzyœci, danych, informacji gospodarczych lub koszt urz¹dzeñ lub programów zastêpczych.
+
+5. Zabrania siê usuwania, modyfikacji i ukrywania adnotacji o prawach autorskich do skryptu o ile takie s¹ - dotyczy to m.in. adnotacji na ten temat zawartych w kodzie Ÿród³owym.
+
+6. Bierzesz na siebie ryzyko wynikaj¹ce z u¿ytkowania skryptu.
+
+7. Autor nie udziela ¿adnej gwarancji oraz rêkojmi, ¿e skrypt bêdzie dzia³aæ na wszystkich serwerach. 

@@ -1,0 +1,338 @@
+
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 1.5em; 
+	background-color: #cccccc;
+	background-repeat: repeat-x;
+	background-position: top;
+	word-wrap: break-word;
+}
+
+
+#header {
+	width: 960px;
+	height: 100px;
+	background: url(images/header.jpg) no-repeat;	
+}
+
+#header #sitetite {
+	float: left;
+	width: 220px;
+	height: 65px;
+	padding-top: 25px;
+	margin-right: 80px;
+	text-align: center;
+}
+
+#header #sitetite h1 {
+	margin: 0;
+	padding: 0;
+}
+
+#header #sitetite a {
+	margin: 0px;
+	padding: 0px;
+	font-size: 30px;
+	color: #edecec;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+#header #sitetite a span {
+	display: block;
+	font-size: 12px;
+	color: #edecec;
+	font-weight: normal;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+
+.scroll {
+	position:absolute;
+    width: 940px;
+    background: url(images/content.jpg) repeat-y;
+}
+
+
+
+ul.navigation {
+	float: left;
+	width: 655px;
+	height: 40px;
+	list-style: none;
+	margin: 22px 0 0 0;
+	padding: 0;
+}
+
+ul.navigation li {
+	display: inline;
+	margin-right: 10px;
+}
+
+ul.navigation a {
+	float: left;
+	display: block;
+	height: 30px;
+	padding: 9px 7px 0 7px;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+}
+
+ul.navigation a:hover, ul.navigation a.selected {
+	color: #fff;
+	background: url(images/menu_hover.jpg) ;
+}
+
+ul.navigation a:focus {
+    outline: none;
+}
+
+
+.hide {
+    display: none;
+}
+
+a, a:link, a:visited { color: #06C; text-decoration: none; }
+a:hover { color: #C00; text-decoration: underline; }
+
+p { margin: 0 0 10px 0; padding: 0; }
+img { border: none; }
+
+h1, h2, h3, h4, h5, h6 { color: #000; }
+
+h2 { font-size: 28px; font-weight: normal; margin: 0 0 30px 0; color: #d20000; font-weight: normal; }
+h3 { font-size: 16px; margin: 0 0 5px 0; padding: 0; padding: 0; font-weight: bold;  }
+h4 { font-size: 18px; margin: 0 0 15px 0; padding: 0; }
+h5 { font-size: 16px; margin: 0 0 10px 0; padding: 0; }
+h6 { font-size: 14px; margin: 0 0 5px 0; padding: 0; }
+
+.cleaner { clear: both; width: 100%; height: 0px; font-size: 0px;  }
+.cleaner_h10 { clear: both; width:100%; height: 10px; }
+.cleaner_h20 { clear: both; width:100%; height: 20px; }
+.cleaner_h30 { clear: both; width:100%; height: 30px; }
+.cleaner_h40 { clear: both; width:100%; height: 40px; }
+.cleaner_h50 { clear: both; width:100%; height: 50px; }
+.cleaner_h60 { clear: both; width:100%; height: 60px; }
+
+
+.float_l { float: left; }
+.float_r { float: right; }
+
+.image_wrapper { display: inline-block; border: 1px solid #ccc; background: #fff; padding: 4px; margin-bottom: 10px; }
+.image_fl { float: left; margin: 3px 15px 0 0; }
+.image_fr { float: right; margin: 3px 0 0 15px; }
+
+blockquote { font-style: italic; margin: 0 0 0 10px;}
+cite { font-weight: bold; color:#333; }
+cite span { color: #666; }
+em { color: #000; }
+
+.tmo_list { margin: 20px 0 20px 20px; padding: 0; list-style: none; }
+.tmo_list li { background: transparent url(images/list.png) no-repeat; margin:0 0 20px; padding: 0 0 0 20px; 	line-height: 1em; }
+.tmo_list li a { color: #fff; }
+.tmo_list li a:hover { color: #ff4301; }
+
+.btn_more a {
+	float: right;
+	display: block;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+}
+
+.btn_more a span {
+	font-size: 16px;
+}
+
+.btn_more a:hover {
+	color: #cc0000;
+	text-decoration: none;
+}
+
+.hr_divider {
+	clear: both;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+	background: url(css/images/hr_divider.png) bottom repeat-x;	
+}
+
+#wrapper {
+	width: 940px;
+	padding: 20px;
+	margin: 0 auto 0 auto;
+}
+
+
+
+
+
+#c_left{
+	width: 200px;
+	float:left;
+	margin:0px 0 10px 10px;
+	
+
+}
+
+#c_center{
+	width: 700px;
+	float:right;
+	margin:0px 15px 10px 0px;
+}
+
+
+
+.last_col {
+	margin-right: 0;
+}
+.entry{
+
+	border:1px solid #DEDEDE;
+	padding: 5px 5px 5px 5px;
+
+}
+
+.title{
+	width:695px;
+	height:25px;
+	background: url(images/belka_d.gif) top no-repeat;
+	color:white;
+	font-size: 16px; 
+	font-weight: bold; 
+	margin: 10px 0 0px 0; 
+	padding: 5px 0 0 5px; 
+}
+
+.ng{
+	width:695px;
+	height:25px;
+	background: url(images/belka_d.gif) top no-repeat;
+	color:white;
+	font-size: 16px; 
+	font-weight: bold; 
+	margin: 10px 0 0px 0; 
+	padding: 5px 0 0 5px; 
+}
+
+.title_menu{
+	width:195px;
+	height:25px;
+	background: url(images/belka.gif) top no-repeat;
+	color:white;
+	font-size: 16px; 
+	font-weight: bold; 
+	margin: 10px 0 0px 0; 
+	padding: 5px 0 0 5px; 
+}
+
+/* footer */
+#c_d {
+
+	float:left;
+	width: 940px;
+
+	background: url(images/footer.jpg) top no-repeat;
+	padding: 20px 0 0px 0;
+}
+#footer {
+
+	float:left;
+	width: 940px;
+	font-size: 11px;
+	text-align: center;
+	color: #777;
+	padding: 20px 0 10px 0;
+	background-color: #cccccc;
+}
+
+#footer a { color: #444; }
+/* end of footer */
+
+.rating0{
+   background-image: url('images/0.png');
+}
+.rating1{
+   background-image: url('images/1.png');
+}
+.rating2{
+   background-image: url('images/2.png');
+}
+
+.profil-m{
+	border: 1px dotted #CCC;
+background-color:white;
+width:120px;
+height:150px;
+text-align:center;
+
+} 
+
+.td_hover{
+	padding:5px 5px 5px 5px;
+	margin:5px 5px 5px 5px;
+	border:1px solid silver;
+}
+.td_hover:hover{
+	background: #E0E0E0;
+}
+
+
+.td_hover a{
+	text-decoration:none;
+}
+
+.a_hover{
+	padding:5px 5px 5px 5px;
+	margin:5px 5px 5px 5px;
+	border:1px solid silver;
+	text-decoration:none;
+	font-weight:bold;
+}
+.a_hover:hover{
+	background: #E0E0E0;
+}
+
+.profil-menu{
+   width:100%;
+   height:20px;
+   text-align:center;
+        padding-top:5px;
+
+        font-weight:bold;
+        color:white;
+   background-image: url('images/menu.jpg');
+}
+
+.profil-menu a{ color:white; text-decoration:none; }
+.profil-menu a:hover{ color:#11A6D4; } 
+
+
+
+div.cookie-alert {
+	z-index: 1010;
+	opacity: 0.9;
+	position: fixed;
+	bottom: 0px;
+	background: #ffffff;
+	border-top: 1px solid #aaaaaa;
+	padding: 10px;
+	text-align: center;
+	font-size: 13px;
+	line-height: 16px;
+	width: 100%;
+}
+
+div.cookie-alert p {
+	width: 1000px;
+	margin: 0px auto;
+	text-align: left;
+	line-height: 20px;
+}
