@@ -119,6 +119,7 @@ $smarty->assign("u_onlineo",$u_onlineo);
 $smarty->assign("givereg", $ust['give']);
 $smarty->assign("tokenr",$ust['token_r']);
 $smarty->assign("rejestracja",$ust['rejestracja']);
+
 $smarty->assign("background",$ust['ust_background']);
 $smarty->assign("banner_g","1");
 $smarty->assign("podstron",$podstron);

@@ -192,7 +192,7 @@ echo'</table>';
 }
 if($_GET['action']=="tlo" )
 {
-    include('/module/tlo.php');
+    include('tlo.php');
 }
 
 if($_GET['action']=="woj" )

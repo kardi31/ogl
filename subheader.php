@@ -91,6 +91,9 @@ $smarty->assign("cookie_get",$_COOKIE['cookie_off']);
 $smarty->assign("lang_on",$ust['lang_on']);
 $smarty->assign("lang_d",$ust['lang_d']);
 
+
+$smarty->assign("background",$ust['ust_background']);
+
 if($_SESSION['user_id']>=1)
 {
 $Querys='SELECT * FROM '.$pre.'user WHERE user_id='.$_SESSION['user_id'].''; 
