@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:22:10
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-24 16:40:40
          compiled from ".\templates\new_red\panel-ogl.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9802564e263c1be166-23517928%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4293c9e0e1a9ff24abbc7def041be5b3771b9484' => 
     array (
       0 => '.\\templates\\new_red\\panel-ogl.tpl',
-      1 => 1448018524,
+      1 => 1448379637,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'faq_id' => 0,
     'faq_nazwa' => 0,
     'faq_data' => 0,
+    'ust_ogloszenie_podsw' => 0,
     'ust_ogloszenie_promo' => 0,
     'faq_opis' => 0,
   ),
@@ -114,8 +115,10 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smar
 </b>  <?php echo $_smarty_tpl->tpl_vars['faq_data']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
   <a class="usunOgloszenie" href="panel-ogl.php?del=<?php echo $_smarty_tpl->tpl_vars['faq_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 "><?php echo $_smarty_tpl->tpl_vars['lang']->value[294];?>
-</a>  <a class="promujOgloszenie" href="panel-ogl.php?promo=<?php echo $_smarty_tpl->tpl_vars['faq_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-">Promuj(<?php echo $_smarty_tpl->tpl_vars['ust_ogloszenie_promo']->value;?>
+</a> <a class="promujOgloszenie" href="panel-ogl.php?podsw=<?php echo $_smarty_tpl->tpl_vars['faq_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+">Podświetl(<?php echo $_smarty_tpl->tpl_vars['ust_ogloszenie_podsw']->value;?>
+ PKT)</a>  <a class="promujOgloszenie" href="panel-ogl.php?promo=<?php echo $_smarty_tpl->tpl_vars['faq_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+">Podbij(<?php echo $_smarty_tpl->tpl_vars['ust_ogloszenie_promo']->value;?>
  PKT)</a><br>
 
 <?php echo $_smarty_tpl->tpl_vars['faq_opis']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
