@@ -19,19 +19,74 @@
 <form action="" method="POST" enctype="multipart/form-data" name="upf">
 
 <table>
-<tr>
-<td valign="top">{$lang[670]}:</td><td><input name="nazwa" type="text" style="width:450px;"/></td>
-</tr>
-<tr>
-<td valign="top">{$lang[671]}:</td><td><input name="film" type="text" style="width:450px;"/><br><small>np: http://www.youtube.com/watch?v=clltiQBBM08 lub http://youtu.be/clltiQBBM08 </small></td>
-</tr>
-<tr>
-<td valign="top">{$lang[672]}:</td>
-<td><input name="prv" type="checkbox" value="1"/> {$lang[673]}</td>
-</tr>
-<tr>
-<td valign="top">{$lang[674]}:</td>
-<td><textarea name="opis" style="width:450px;height:50px"></textarea></td>
+    <tr>
+        <th colspan="2" valign="top">1. Podaj nazwę filmiku</th>
+    </tr>
+    <tr>
+        <td colspan="2"><input name="nazwa" type="text" style="width:450px;"/></td>
+    </tr>
+    
+    <tr>
+        <td colspan="2"><br /></td>
+    </tr>
+    <tr>
+        <th colspan="2" valign="top">2. Dodaj filmik</th>
+    </tr>
+    <tr>
+        <td valign="top"><h4 style="float:left;">Dodaj filmik z youtube</h4></td>
+        <td>
+            
+            <input style="margin-top:5px;" name="film" type="text"/><br><small>np: http://www.youtube.com/watch?v=clltiQBBM08 lub http://youtu.be/clltiQBBM08 </small>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" colspan="2">lub</td>
+    </tr>
+    <tr>
+        {*<td>
+            <h3 style="">Lub</h3>
+        </td>*}
+        <td valign="top">
+            <h4>Wrzuć własny film</h4>
+        </td>
+        <td>
+            
+            <input name="custom_file" type="file" value="1"/> 
+        </td>
+        <input name="prv" type="hidden" value="0"/>
+    </tr>
+    
+    <tr>
+        <td colspan="2"><br /></td>
+    </tr>
+    <tr>
+        <th colspan="2" valign="top">3. Dodaj opis</th>
+    </tr>
+    <tr>
+        <td colspan="2"><textarea name="opis" style="width:450px;height:50px"></textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2"><br /><br /></td>
+    </tr>
+    <tr>
+        <th colspan="2" valign="top">4. Ustal cene (ilość kredytów)</th>
+    </tr>
+    <tr>
+        <td colspan="2">
+            Podaj liczbę kredytów, które musi Ci zapłacić użytkownik chcący obejrzeć filmik. Zostaw 0 jeżeli filmik ma być darmowy.</td>
+    </tr>
+    
+    <tr>
+        <td colspan="2"><br /></td>
+    </tr>
+    <tr>
+        <td valign="top">
+            Cena (ilośc kredytów)
+        </td>
+        <td>
+            <input name="cena" type="text" value="0" size="2"/> <br />
+        </td>
+    </tr>
 </table>
 
 <input type="submit" value="Dodaj" name="upf">
@@ -75,7 +130,10 @@
 
 
 </div>
-
+<style>
+    th{
+    font-size:14px;}
+</style>
 
 
 {include file="$templa/right.tpl"}
