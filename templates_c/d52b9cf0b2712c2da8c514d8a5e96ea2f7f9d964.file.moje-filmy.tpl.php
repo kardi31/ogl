@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-25 07:26:26
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-25 13:59:58
          compiled from ".\templates\new_red\moje-filmy.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1312856549078e83ec8-14847780%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd52b9cf0b2712c2da8c514d8a5e96ea2f7f9d964' => 
     array (
       0 => '.\\templates\\new_red\\moje-filmy.tpl',
-      1 => 1448432061,
+      1 => 1448456397,
       2 => 'file',
     ),
   ),
@@ -24,10 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'stan' => 0,
     'cenaf' => 0,
     'fo_id' => 0,
-    'fo_prv' => 0,
-    'fo_fd' => 0,
+    'fo_custom_file' => 0,
     'fo_fm' => 0,
+    'fo_thumb' => 0,
+    'fo_user' => 0,
+    'fo_fd' => 0,
     'fo_opis' => 0,
+    'fo_cena' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -171,24 +174,67 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smar
 <td colspan="2" align="left">
 <a href="user/moje-filmy/del-<?php echo $_smarty_tpl->tpl_vars['fo_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 "><?php echo $_smarty_tpl->tpl_vars['lang']->value[678];?>
-</a> | <?php if ($_smarty_tpl->tpl_vars['fo_prv']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]==1) {?><a href="user/moje-filmy/all-<?php echo $_smarty_tpl->tpl_vars['fo_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-"><?php echo $_smarty_tpl->tpl_vars['lang']->value[679];?>
-</a><?php } else { ?><a href="user/moje-filmy/prv-<?php echo $_smarty_tpl->tpl_vars['fo_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-"><?php echo $_smarty_tpl->tpl_vars['lang']->value[680];?>
-</a><?php }?> 
+</a> 
+
 </td>
 </tr>
 <tr>
 <td valign="top" width="5%">
-<img src="http://i2.ytimg.com/vi/<?php echo $_smarty_tpl->tpl_vars['fo_fd']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+    <?php if ($_smarty_tpl->tpl_vars['fo_custom_file']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]!=1) {?>
+    
+        <img src="http://i2.ytimg.com/vi/<?php echo $_smarty_tpl->tpl_vars['fo_fm']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 /default.jpg">
+    
+    <?php } else { ?>
+        <?php if (!$_smarty_tpl->tpl_vars['fo_thumb']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]) {?>
+            <video width="120" height="90" datarel='<?php echo $_smarty_tpl->tpl_vars['fo_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+' dataid='<?php echo $_smarty_tpl->tpl_vars['fo_user']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+'>
+                <source src="/upload/filmy/<?php echo $_smarty_tpl->tpl_vars['fo_user']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+/<?php echo $_smarty_tpl->tpl_vars['fo_fm']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+" type="video/mp4">
+                <source src="/upload/filmy/<?php echo $_smarty_tpl->tpl_vars['fo_user']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+/<?php echo $_smarty_tpl->tpl_vars['fo_fm']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+" type="video/ogg">
+                Your browser does not support the video tag.
+              </video>
+            <canvas></canvas>
+        <?php } else { ?>
+            <img src='/upload/filmy/<?php echo $_smarty_tpl->tpl_vars['fo_user']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+/<?php echo $_smarty_tpl->tpl_vars['fo_thumb']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+' style='width:120px;height:90px;' />
+        <?php }?>
+    <?php }?>
 </td>
 <td valign="top" align="left">
 <form  action="wyk/ezum.php"  method="POST">
-<input name="nazwa" type="text" style="width:450px;" value="<?php echo $_smarty_tpl->tpl_vars['fo_fm']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+    <table>
+    <tr>
+        <td>
+            Nazwa: 
+        </td>
+        <td>
+<input name="nazwa" type="text" style="width:450px;" value="<?php echo $_smarty_tpl->tpl_vars['fo_fd']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+"/> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Opis:
+        </td>
+        <td>
+ <textarea name="opis" style="width:450px;height:30px;"><?php echo $_smarty_tpl->tpl_vars['fo_opis']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>Koszt:</td>
+        <td>
+ <input name="cena" type="text" size="2" value="<?php echo $_smarty_tpl->tpl_vars['fo_cena']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 "/>
-<textarea name="opis" style="width:450px;height:30px;"><?php echo $_smarty_tpl->tpl_vars['fo_opis']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-</textarea><br>
+        </td>
+    </tr>
+    </table>
 <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['fo_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 "><input type="submit"  value="<?php echo $_smarty_tpl->tpl_vars['lang']->value[681];?>
 "></form>
@@ -213,8 +259,70 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smar
 <style>
     th{
     font-size:14px;}
+    
+    canvas{
+        position:fixed;
+        top:-1000px;
+        
+    }
 </style>
-
+	<script>
+            $(document).ready(function(){
+            setTimeout(
+  function() 
+  {
+		// Get handles on the video and canvas elements
+		var video = document.querySelector('video');
+                
+		var canvas = document.querySelector('canvas');
+		// Get a handle on the 2d context of the canvas element
+		var context = canvas.getContext('2d');
+		// Define some vars required later
+		var w, h, ratio;
+		
+		// Add a listener to wait for the 'loadedmetadata' state so the video's dimensions can be read
+		
+			// Calculate the ratio of the video's width to height
+			ratio = video.videoWidth / video.videoHeight;
+			// Define the required width as 100 pixels smaller than the actual video's width
+			w = 120;
+			// Calculate the height based on the video's width and the ratio
+			h = 90;
+			// Set the canvas width and height to the values just calculated
+			canvas.width = w;
+			canvas.height = h;			
+		
+                snap();
+                
+                
+		// Takes a snapshot of the video
+		function snap() {
+			// Define the size of the rectangle that will be filled (basically the entire element)
+			context.fillRect(0, 0, w, h);
+			// Grab the image from the video
+			context.drawImage(video, 0, 0, w, h);
+                        var dataURL = canvas.toDataURL();
+                        $.ajax({
+                            type: "POST",
+                            url: "/wyk/upload-image.php",
+                            data: {
+                                id: video.getAttribute("datarel"),
+                                uid: video.getAttribute("dataid"),
+                               imgBase64: dataURL
+                            }
+                        }).done(function(o) {
+                            console.log('saved'); 
+                            // If you want the file to be visible in the browser 
+                            // - please modify the callback in javascript. All you
+                            // need is to return the url to the file, you just saved 
+                            // and than put the image in your browser.
+                          });
+		}
+    //do something special
+  }, 2000);
+    })
+		 
+	</script>
 
 <?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['templa']->value)."/right.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 

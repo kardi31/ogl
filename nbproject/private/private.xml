@@ -22,12 +22,18 @@
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/ustawienia_reklama.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/tlo.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/style/default.css</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/chooseBgImage.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/faq.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/subheader.tpl</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/subheader.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/do_kup.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates_c/4293c9e0e1a9ff24abbc7def041be5b3771b9484.file.panel-ogl.tpl.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/include/ust.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/uploadBgImage.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/subheader.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/subheader.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/ust.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/moje-filmy.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/moje-filmy.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/include/PhpVideoToolkit/examples/includes/config.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/wyk/ezum.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/wyk/upload-image.php</file>
         </group>
     </open-files>
 </project-private>

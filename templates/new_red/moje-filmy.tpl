@@ -101,17 +101,55 @@
 <table width="100%">
 <tr>
 <td colspan="2" align="left">
-<a href="user/moje-filmy/del-{$fo_id[id]}">{$lang[678]}</a> | {if $fo_prv[id]==1}<a href="user/moje-filmy/all-{$fo_id[id]}">{$lang[679]}</a>{else}<a href="user/moje-filmy/prv-{$fo_id[id]}">{$lang[680]}</a>{/if} 
+<a href="user/moje-filmy/del-{$fo_id[id]}">{$lang[678]}</a> 
+{*| {if $fo_prv[id]==1}<a href="user/moje-filmy/all-{$fo_id[id]}">{$lang[679]}</a>{else}<a href="user/moje-filmy/prv-{$fo_id[id]}">{$lang[680]}</a>{/if} *}
 </td>
 </tr>
 <tr>
 <td valign="top" width="5%">
-<img src="http://i2.ytimg.com/vi/{$fo_fd[id]}/default.jpg">
+    {if $fo_custom_file[id]!=1}
+    
+        <img src="http://i2.ytimg.com/vi/{$fo_fm[id]}/default.jpg">
+    
+    {else}
+        {if !$fo_thumb[id]}
+            <video width="120" height="90" datarel='{$fo_id[id]}' dataid='{$fo_user[id]}'>
+                <source src="/upload/filmy/{$fo_user[id]}/{$fo_fm[id]}" type="video/mp4">
+                <source src="/upload/filmy/{$fo_user[id]}/{$fo_fm[id]}" type="video/ogg">
+                Your browser does not support the video tag.
+              </video>
+            <canvas></canvas>
+        {else}
+            <img src='/upload/filmy/{$fo_user[id]}/{$fo_thumb[id]}' style='width:120px;height:90px;' />
+        {/if}
+    {/if}
 </td>
 <td valign="top" align="left">
 <form  action="wyk/ezum.php"  method="POST">
-<input name="nazwa" type="text" style="width:450px;" value="{$fo_fm[id]}"/>
-<textarea name="opis" style="width:450px;height:30px;">{$fo_opis[id]}</textarea><br>
+    <table>
+    <tr>
+        <td>
+            Nazwa: 
+        </td>
+        <td>
+<input name="nazwa" type="text" style="width:450px;" value="{$fo_fd[id]}"/> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Opis:
+        </td>
+        <td>
+ <textarea name="opis" style="width:450px;height:30px;">{$fo_opis[id]}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>Koszt:</td>
+        <td>
+ <input name="cena" type="text" size="2" value="{$fo_cena[id]}"/>
+        </td>
+    </tr>
+    </table>
 <input type="hidden" name="id" value="{$fo_id[id]}"><input type="submit"  value="{$lang[681]}"></form>
 </td>
 </tr>
@@ -133,8 +171,70 @@
 <style>
     th{
     font-size:14px;}
+    
+    canvas{
+        position:fixed;
+        top:-1000px;
+        
+    }
 </style>
-
+	<script>
+            $(document).ready(function(){
+            setTimeout(
+  function() 
+  {
+		// Get handles on the video and canvas elements
+		var video = document.querySelector('video');
+                
+		var canvas = document.querySelector('canvas');
+		// Get a handle on the 2d context of the canvas element
+		var context = canvas.getContext('2d');
+		// Define some vars required later
+		var w, h, ratio;
+		
+		// Add a listener to wait for the 'loadedmetadata' state so the video's dimensions can be read
+		
+			// Calculate the ratio of the video's width to height
+			ratio = video.videoWidth / video.videoHeight;
+			// Define the required width as 100 pixels smaller than the actual video's width
+			w = 120;
+			// Calculate the height based on the video's width and the ratio
+			h = 90;
+			// Set the canvas width and height to the values just calculated
+			canvas.width = w;
+			canvas.height = h;			
+		
+                snap();
+                
+                
+		// Takes a snapshot of the video
+		function snap() {
+			// Define the size of the rectangle that will be filled (basically the entire element)
+			context.fillRect(0, 0, w, h);
+			// Grab the image from the video
+			context.drawImage(video, 0, 0, w, h);
+                        var dataURL = canvas.toDataURL();
+                        $.ajax({
+                            type: "POST",
+                            url: "/wyk/upload-image.php",
+                            data: {
+                                id: video.getAttribute("datarel"),
+                                uid: video.getAttribute("dataid"),
+                               imgBase64: dataURL
+                            }
+                        }).done(function(o) {
+                            console.log('saved'); 
+                            // If you want the file to be visible in the browser 
+                            // - please modify the callback in javascript. All you
+                            // need is to return the url to the file, you just saved 
+                            // and than put the image in your browser.
+                          });
+		}
+    //do something special
+  }, 2000);
+    })
+		 
+	</script>
 
 {include file="$templa/right.tpl"}
 {include file="$templa/footer.tpl"}

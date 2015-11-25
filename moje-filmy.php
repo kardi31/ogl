@@ -1,6 +1,12 @@
 <?php 
 include("subheader.php");
 
+//$video_path = 'C:\xampp\htdocs\ogloszeniatowarzyskie\upload\filmy\578\SampleVideo_1080x720_1mb.mp4';
+//$video_image_dir = 'C:\xampp\htdocs\ogloszeniatowarzyskie\upload\filmy\578';
+//$video_name = 'SampleVideo_1080x720_1mb.mp4';
+//$time_in_seconds = round(1 / 2); 
+//exec("ffmpeg -vframes 1 -ss " . $time_in_seconds . " -i " . $video_path . " " . $video_image_dir . $video_name . ".jpg -y 2> " . $video_image_dir . $video_name . ".txt");
+
 if($_GET['v']=="del")
 {
 
@@ -9,21 +15,21 @@ if($_GET['v']=="del")
 
      $up="DELETE FROM ".$pre."mov WHERE fo_id='".$_GET['id']."' and fo_user='".$_SESSION['user_id']."'";
      db_query($up);
-     header("Location: ".$ust['adres']."user/moje-filmy/7");
+     header("Location: /user/moje-filmy/7");
      exit();
 }
 if($_GET['v']=="prv")
 {
      $up="UPDATE ".$pre."mov SET fo_prv=1 WHERE fo_id='".$_GET['id']."' and fo_user='".$_SESSION['user_id']."'";
      db_query($up);
-     header("Location: ".$ust['adres']."user/moje-filmy/8");
+     header("Location: /user/moje-filmy/8");
      exit();
 }
 if($_GET['v']=="all")
 {
      $up="UPDATE ".$pre."mov SET fo_prv=0 WHERE fo_id='".$_GET['id']."' and fo_user='".$_SESSION['user_id']."'";
      db_query($up);
-     header("Location: ".$ust['adres']."user/moje-filmy/8");
+     header("Location: /user/moje-filmy/8");
      exit();
 }
 
@@ -65,8 +71,15 @@ if($_POST['film'])
 if(isset($_FILES['custom_file'])){
     if($user_moneyp>=$ust['cenaf'] or $ust['cenaf']==0)
      {
-        $target_dir = "upload/filmy/";
+              
+        $target_dir = "upload/filmy/".$_SESSION['user_id']."/";
+        if(!is_dir($target_dir)){
+            mkdir($target_dir);
+            chmod($target_dir,755);
+        }
         $target_file = $target_dir . basename($_FILES["custom_file"]["name"]);
+        
+        
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
         // Check if image file is a actual image or fake image
@@ -91,11 +104,10 @@ if(isset($_FILES['custom_file'])){
             $uploadOk = 0;
         }
         // Allow certain file formats
-//        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-//        && $imageFileType != "gif" ) {
-//            $msg = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-//            $uploadOk = 0;
-//        }
+        if(!in_array($imageFileType,array("webm", "mp4", "ogv"))) {
+            $msg = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
 //        var_dump($msg);exitl
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
@@ -110,9 +122,10 @@ if(isset($_FILES['custom_file'])){
         }
         $filename = basename( $_FILES["custom_file"]["name"]);
 
-        $up="INSERT INTO ".$pre."mov(`fo_user`,`fo_fd`,`fo_fm`,`fo_data`,`fo_prv`,`fo_opis`,`fo_cena`)VALUES('".$_SESSION['user_id']."','".$filename."','".htmlspecialchars($_POST['film'])."',NOW(),'".htmlspecialchars($_POST['prv'])."','".htmlspecialchars($_POST['opis'])."','".htmlspecialchars($_POST['cena'])."')";
+        $up="INSERT INTO ".$pre."mov(`fo_user`,`fo_fd`,`fo_fm`,`fo_data`,`fo_prv`,`fo_opis`,`fo_cena`,`fo_custom_file`)VALUES('".$_SESSION['user_id']."','".htmlspecialchars($_POST['nazwa'])."','".$filename."',NOW(),'".htmlspecialchars($_POST['prv'])."','".htmlspecialchars($_POST['opis'])."','".htmlspecialchars($_POST['cena'])."',1)";
         db_query($up);
  
+       
         header("Location: /user/moje-filmy/5");
         exit();
      }
@@ -125,24 +138,38 @@ if(isset($_FILES['custom_file'])){
 
 
 
-$Query='SELECT * FROM '.$pre.'mov WHERE fo_user="'.db_real_escape_string($_SESSION['user_id']).'"'; 
+$Query='SELECT * FROM '.$pre.'mov WHERE fo_user="'.db_real_escape_string($_SESSION['user_id']).'" order by fo_id DESC'; 
 $result = db_query($Query) or die(db_error());
 while ($row = db_fetch($result)) 
 {
 
-$fo_id[]=$row['fo_id'];
-$fo_fm[]=$row['fo_fd'];
-$fo_fd[]=get_you($row['fo_fm']);
-$fo_opis[]=$row['fo_opis'];
-$fo_prv[]=$row['fo_prv'];
+    $fo_id[]=$row['fo_id'];
+    $fo_fd[]=$row['fo_fd'];
+    $fo_opis[]=$row['fo_opis'];
+    $fo_prv[]=$row['fo_prv'];
+    $fo_custom_file[]=$row['fo_custom_file'];
+    $fo_cena[]=$row['fo_cena'];
+    $fo_user[]=$row['fo_user'];
+    if($row['fo_custom_file']==1){
+        $fo_fm[]=$row['fo_fm'];
+    }
+    else{
+        $fo_fm[]=get_you($row['fo_fm']);
+    }
+    if(strlen($row['fo_thumb']))
+        $fo_thumb[]=$row['fo_thumb'];
 
 }
 
 $smarty->assign("fo_id",$fo_id);
 $smarty->assign("fo_fm",$fo_fm);
 $smarty->assign("fo_fd",$fo_fd);
+$smarty->assign("fo_cena",$fo_cena);
 $smarty->assign("fo_opis",$fo_opis);
 $smarty->assign("fo_prv",$fo_prv);
+$smarty->assign("fo_user",$fo_user);
+$smarty->assign("fo_thumb",$fo_thumb);
+$smarty->assign("fo_custom_file",$fo_custom_file);
 $smarty->assign("cenaf",$ust['cenaf']);
 
 $smarty->assign("stan",$_GET['stan']);
