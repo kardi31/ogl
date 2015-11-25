@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-24 18:23:52
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-25 07:26:26
          compiled from ".\templates\new_red\moje-filmy.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1312856549078e83ec8-14847780%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd52b9cf0b2712c2da8c514d8a5e96ea2f7f9d964' => 
     array (
       0 => '.\\templates\\new_red\\moje-filmy.tpl',
-      1 => 1448385832,
+      1 => 1448432061,
       2 => 'file',
     ),
   ),
