@@ -20,9 +20,11 @@ if($_SESSION['user_id']>=1)
         $filename =  uniqid() . '.png';
 	$file = UPLOAD_DIR .$filename;
 	$success = file_put_contents($file, $data);
-	print $success ? $file : 'Unable to save the file.';
         
         $up="UPDATE ".$pre."mov SET fo_thumb='".$filename."' WHERE fo_id='".$id."'";
         db_query($up);
+        
+        echo json_encode(array('url' => $file));
+        
 }
 ?>

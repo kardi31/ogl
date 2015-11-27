@@ -15,7 +15,8 @@
 <a href="user/zmien-haslo/" class="mb_buta"><div class="mb_but">{$lang[122]}</div></a>
 {if $gift_on==1}<a href="doladuj-konto/" class="mb_buta"><div class="mb_but">{$lang[123]}</div></a>{/if}
 <a href="user/moje-zdjecia/" class="mb_buta"><div class="mb_but">{$lang[124]}</div></a>
-<a href="user/moje-filmy/" class="mb_buta"><div class="mb_but">{$lang[657]}</div></a>
+<a href="user/moje-filmy/" class="mb_buta"><div class="mb_but">{$lang[657]} / Dodaj</div></a>
+<a href="user/kupione-filmy/" class="mb_buta"><div class="mb_but">Kupione filmy</div></a>
 <a href="user/imprezy/" class="mb_buta"><div class="mb_but">{$lang[125]}</div></a>
 <a href="panel-ogl.php" class="mb_buta"><div class="mb_but">Dodaj ogłoszenia</div></a>
 <a href="user/znajomi/" class="mb_buta"><div class="mb_but">{$lang[126]}</div></a>

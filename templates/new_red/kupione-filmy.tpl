@@ -3,29 +3,72 @@
 {include file="$templa/left.tpl"}
 
 <div class="left">
-		
-		
-		
-				<h1 class="ng">Ogłoszenia</h1>
-		<p>
-{section name=id loop=$faq_nazwa}
-<div class="ogloszenieRow {if $faq_featured[id]==1}featured{/if}">
-	<b style="font-size:14px;">{$faq_nazwa[id]}</b>
-	<div style="padding:4px 0 6px 0;">Dodał(a): <a href="profil/{$faq_user_loginn[id]}/{$faq_user_id[id]}"><b>{$faq_user_login[id]}</b></a> Dnia: {$faq_data[id]}</div>
-	<div style="clear:both;height:110px;">
-		<div style="float:left;width:115px;">
-			<a href="profil/{$faq_user_loginn[id]}/{$faq_user_id[id]}">{if $faq_img[id]==""}{if $faq_plecnr[id]=="1"}<img src="{$site_url}images/women.jpg" alt="{$faq_user_login[id]}" />{else}<img src="{$site_url}images/men.jpg" alt="{$faq_user_login[id]}" />{/if}{else}<img src="{$site_url}upload/zdjecia/{$faq_img[id]}" alt="{$faq_user_login[id]}" />{/if}</a>
-		</div>
-		<div style="float:left;width:560px;">
-			{$faq_opis[id]}
-		</div>
-	</div>
+    <h1 class="ng">Moje kupione filmy</h1>
+        {foreach from=$rows key=k item=row}
+            <div class="filmyRow">
+                <a href='/filmy/{$row['fo_id']}'>
+                    <strong>{$row['fo_fd']}</strong>
+                </a>
+                    <div class='small'>Dodał(a): <a href="profil/{$row['user_loginn']}/{$row['fo_id']}"><b>{$row['user_login']}</b></a> <br /> Dnia: {$row['fo_data']}
+                        <br />
+                        Cena: <b>{if $row['fo_cena']!=0} {$row['fo_cena']} {else} Darmowy {/if}</b>
+                    </div>
+                    <div>
+                        
+                <a href='/filmy/{$row['fo_id']}'>
+                            <div>
+                                {if $row['fo_custom_file']!=1}
+    
+                                    <img src="http://i2.ytimg.com/vi/{$row['fo_fm']}/default.jpg">
+
+                                {else}
+                                    {if !$row['fo_thumb']}
+                                        <video width="120" height="90" datarel='{$row['fo_id']}' dataid='{$row['fo_user']}'>
+                                            <source src="/upload/filmy/{$row['fo_user']}/{$row['fo_fm']}" type="video/mp4">
+                                            <source src="/upload/filmy/{$row['fo_user']}/{$row['fo_fm']}" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                          </video>
+                                        <canvas></canvas>
+                                    {else}
+                                        <img src='/upload/filmy/{$row['fo_user']}/{$row['fo_thumb']}' style='width:120px;height:90px;' />
+                                    {/if}
+                                {/if}
+                                <div class='description'>{$row['fo_fd']}</div>                                    
+                            </div>
+                </a>
+                    </div>
+            </div>
+                            
+                                    {if $k%3==2} <div class='clearfix'></div>{/if}
+        {/foreach}
 </div>
-{/section}
-</p>
-	
-
-
-	</div>
+        <style>
+            .filmyRow .description{
+                margin-top:8px;
+                padding-left:2px;
+                padding-right:2px;
+            }
+            .filmyRow strong{
+                font-size: 14px;
+                display: block;
+                margin: 4px 0px;
+            }
+            
+            .filmyRow div.small{
+                font-size:11px;
+                margin-bottom:5px;
+            }
+            .filmyRow{
+                width:33%;
+                float:left;
+                margin-bottom:20px;
+            }
+            .clearfix:after,.clearfix:before{
+                display:block;
+                clear:both;
+                content:" ";
+            }
+            
+        </style>
 {include file="$templa/right.tpl"}
 {include file="$templa/footer.tpl"}

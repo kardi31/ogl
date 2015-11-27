@@ -39,7 +39,9 @@
 {if $user_id>=1}<table  cellspacing="0"><tr><td class="td_hover"><a href="grupy/create/yes/" >{$lang[574]}</a></td></tr></table><br>{/if}
 
 {section name=id loop=$g_id}
-<a href="grupa/{$g_id[id]}/{$g_nazwan[id]}">{$g_nazwa[id]}</a>  <br>
+<a style='    color: blue;
+    font-weight: bold;
+    font-size: 14px;' href="grupa/{$g_id[id]}/{$g_nazwan[id]}">{$g_nazwa[id]}</a>  <br>
 <small>{$lang[575]} {$g_data[id]} | {if $g_typ[id]==1}{$lang[576]}{else}{$lang[577]}{/if} {if $user_id>=1}| <a href="grupa/{$g_id[id]}/{$g_nazwan[id]}_add:user">{$lang[578]}</a>{/if}</small>
 {if $user_adm=="adm" or $user_id==$g_user[id]}<br><small>
 

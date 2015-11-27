@@ -23,7 +23,7 @@
         <th colspan="2" valign="top">1. Podaj nazwę filmiku</th>
     </tr>
     <tr>
-        <td colspan="2"><input name="nazwa" type="text" style="width:450px;"/></td>
+        <td colspan="2"><input required name="nazwa" type="text" style="width:450px;"/></td>
     </tr>
     
     <tr>
@@ -50,7 +50,7 @@
             <h4>Wrzuć własny film</h4>
         </td>
         <td>
-            
+            Akceptowany format plików : mp4, wemb,ogv<br />
             <input name="custom_file" type="file" value="1"/> 
         </td>
         <input name="prv" type="hidden" value="0"/>
@@ -63,7 +63,7 @@
         <th colspan="2" valign="top">3. Dodaj opis</th>
     </tr>
     <tr>
-        <td colspan="2"><textarea name="opis" style="width:450px;height:50px"></textarea></td>
+        <td colspan="2"><textarea required name="opis" style="width:450px;height:50px"></textarea></td>
     </tr>
     <tr>
         <td colspan="2"><br /><br /></td>
@@ -112,9 +112,9 @@
         <img src="http://i2.ytimg.com/vi/{$fo_fm[id]}/default.jpg">
     
     {else}
-        {if !$fo_thumb[id]}
+        {if !strlen($fo_thumb[id])}
             <video width="120" height="90" datarel='{$fo_id[id]}' dataid='{$fo_user[id]}'>
-                <source src="/upload/filmy/{$fo_user[id]}/{$fo_fm[id]}" type="video/mp4">
+                <source src="/upload/filmy/{$fo_user[id]}/{$fo_fm[id]}" type="video/{$fo_file_type[id]}">
                 <source src="/upload/filmy/{$fo_user[id]}/{$fo_fm[id]}" type="video/ogg">
                 Your browser does not support the video tag.
               </video>
@@ -231,7 +231,7 @@
                           });
 		}
     //do something special
-  }, 2000);
+  }, 4500);
     })
 		 
 	</script>

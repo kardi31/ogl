@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:10:46
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-26 16:50:14
          compiled from ".\templates\new_red\menu.logowanie.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21675564e1eb340d0f5-31065498%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5d26ad6597cdbf5d2872fa0cf0477b5e4370fd7b' => 
     array (
       0 => '.\\templates\\new_red\\menu.logowanie.tpl',
-      1 => 1448017089,
+      1 => 1448552997,
       2 => 'file',
     ),
   ),
@@ -81,6 +81,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div></a>
 <a href="user/moje-filmy/" class="mb_buta"><div class="mb_but"><?php echo $_smarty_tpl->tpl_vars['lang']->value[657];?>
 </div></a>
+<a href="user/kupione-filmy/" class="mb_buta"><div class="mb_but">Kupione filmy</div></a>
 <a href="user/imprezy/" class="mb_buta"><div class="mb_but"><?php echo $_smarty_tpl->tpl_vars['lang']->value[125];?>
 </div></a>
 <a href="panel-ogl.php" class="mb_buta"><div class="mb_but">Dodaj ogłoszenia</div></a>

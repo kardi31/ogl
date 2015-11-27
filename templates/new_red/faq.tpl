@@ -29,3 +29,11 @@
 	</div>
 {include file="$templa/right.tpl"}
 {include file="$templa/footer.tpl"}
+
+
+
+<style>
+    .ogloszenieRow.featured div div{
+        max-width:470px;
+    }
+    </style>

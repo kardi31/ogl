@@ -20,37 +20,53 @@ echo'<div id="ukryj" ><div id="red" style="border-style:solid;border-width:thin;
 }
 if($_GET['v']=="delete")
 {
-$del="DELETE FROM ".$pre."gift WHERE gi_id='".db_real_escape_string($_GET['id'])."'";
+$del="DELETE FROM ".$pre."mov WHERE fo_id='".db_real_escape_string($_GET['id'])."'";
 db_query($del);
-$del="DELETE FROM ".$pre."give WHERE ge_gi='".db_real_escape_string($_GET['id'])."'";
-db_query($del);
-echo'<div id="ukryj" ><div id="red" style="border-style:solid;border-width:thin;width:400px;height:30px;text-align:center;display:table-cell;vertical-align:middle;border-color:black;background-color:#fde1e1;"><center><b>'.$lang['282'].'</b></center></div></div><br>';
+echo'<div id="ukryj" ><div id="red" style="border-style:solid;border-width:thin;width:400px;height:30px;text-align:center;display:table-cell;vertical-align:middle;border-color:black;background-color:#fde1e1;"><center><b>Film usunięty</b></center></div></div><br>';
 }
 
 echo'
 
-<a href="index.php?page=gift&action=add" title="'.$lang['284'].'"><img src="style/images/add32.png" style="vertical-align: middle;"><b>'.$lang['283'].'</b></a><br>
 <br>
 <table width="90%" cellspacing="0" cellpadding="0" style="border: 1px solid #cccccc;">
 <tr>
 <td width="5%" background="style/images/belka.gif" height="24" align="center"><b>'.$lang['285'].'</b></td>
-<td width="65%" background="style/images/belka.gif" height="24" align="center"><b>'.$lang['286'].'</b></td>
+<td width="45%" background="style/images/belka.gif" height="24" align="center"><b>'.$lang['286'].'</b></td>
 <td width="5%" background="style/images/belka.gif" height="24" align="center"><b>'.$lang['287'].'</b></td>
+<td width="25%" background="style/images/belka.gif" height="24" align="center"><b>Ikonka</b></td>
 <td width="5%" background="style/images/belka.gif" height="24" align="center"><b>'.$lang['288'].'</b></td>
 <td width="5%" background="style/images/belka.gif" height="24" align="center"><b>'.$lang['289'].'</b></td>
 </tr>';
 
 $i=1;
-$Query='SELECT * FROM '.$pre.'gift  ORDER by gi_id DESC '; 
+$Query = "SELECT * FROM ".$pre."mov LEFt JOIN ".$pre."user ON user_id=fo_user ORDER by fo_id DESC";
 $result = db_query($Query) or die(db_error());
 while($row=db_fetch($result))
 {
 echo'<tr>
-<td width="5%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center">'.$row['gi_id'].'</td>
-<td width="65%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center">'.$row['gi_nazwa'].'</td>
-<td width="5%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center">'.$row['gi_cena'].'</td>
-<td width="5%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center"><a href="index.php?page=gift&action=edit&id='.$row['gi_id'].'"><img src="style/images/edit.gif" title="'.$lang['290'].'"></a></td>
-<td width="5%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center"><a href="index.php?page=gift&v=delete&id='.$row['gi_id'].'" onclick="return(potwierdz())"><img src="style/images/delete.png" title="'.$lang['291'].'"></a></td>
+<td width="5%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center">'.$row['fo_id'].'</td>
+<td width="45%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center">'.$row['fo_fd'].'</td>
+<td width="5%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center">'.(int)$row['fo_cena'].'</td>';
+
+ if($row['fo_custom_file']!=1){
+     $youtubeId = get_you($row['fo_fm']);
+//     echo '<td width="25%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center"><iframe width="120" height="90" src="http://www.youtube.com/embed/'.$youtubeId.'"></iframe></td>';
+     echo '<td width="25%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center"><img src="http://i2.ytimg.com/vi/'.$youtubeId.'/default.jpg"></td>';
+ }
+ else{
+//     echo '<td width="25%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center">'
+//     . '<video controls width="120" height="90">
+//        <source src="/upload/filmy/'.$row['fo_user'].'/'.$row['fo_fm'].'" type="video/'.$row['fo_file_type'].'">
+//        <source src="/upload/filmy/'.$row['fo_user'].'/'.$row['fo_fm'].'" type="video/ogg">
+//        Your browser does not support the video tag.
+//      </video></td>';
+     echo '<td width="25%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center"><img src="/upload/filmy/'.$row['fo_user'].'/'.$row['fo_thumb'].'"></td>';
+     
+ }
+                                   
+echo '
+<td width="5%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center"><a href="index.php?page=filmy&action=edit&id='.$row['fo_id'].'"><img src="style/images/edit.gif" title="'.$lang['290'].'"></a></td>
+<td width="5%"'; if($i%2==0){echo' bgcolor="#dddddd" ';} echo' align="center"><a href="index.php?page=filmy&v=delete&id='.$row['fo_id'].'" onclick="return(potwierdz())"><img src="style/images/delete.png" title="'.$lang['291'].'"></a></td>
 </tr>';
 $i++;
 }
@@ -58,91 +74,149 @@ echo'</table>';
 
 }
 
-if($_GET['action']=="add")
-{
-echo'
-
-<form action="" method="POST" enctype="multipart/form-data">
-
-<table>
-<tr>
-<td><b>'.$lang['292'].'</b></td>
-<td><input type="text" name="nazwa" style="width:250px;"></td>
-</tr>
-<tr>
-<td><b>'.$lang['293'].'</b></td>
-<td><input type="text" name="cena" style="width:50px;"> <img src="style/images/faq16.png" title="Ile punktów zostanie pobranych z konta użytkownika za wysłanie tego  prezentu"></td>
-</tr>
-<tr>
-<td><b>Punkty:</b></td>
-<td><input type="text" name="money" value="0" style="width:50px;"> <img src="style/images/faq16.png" title="'.$lang['297'].'"></td>
-</tr>
-<tr>
-<td valign="top"><b>Zdjęcie:</b></td>
-<td><input type="hidden" name="MAX_FILE_SIZE" value="10000000000" /><input name="plik1" type="file"/> <br><small>'.$lang['298'].'</small></td>
-</tr>
-</table>
-<input type="submit" value="'.$lang['296'].'" name="addcatg">
-</form>
-
-';
-
-}
-
 
 if($_GET['action']=="edit")
 {
 
-$Query='SELECT * FROM '.$pre.'gift WHERE gi_id="'.db_real_escape_string($_GET['id']).'"  ORDER by gi_id DESC '; 
+$Query='SELECT * FROM '.$pre.'mov WHERE fo_id="'.db_real_escape_string($_GET['id']).'"  ORDER by fo_id DESC '; 
 $result = db_query($Query) or die(db_error());
 while($row=db_fetch($result))
 {
 echo'
+<h2>Edytuj film</h2>
 
-
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="/admin/edit-film.php" method="POST" enctype="multipart/form-data">
 
 <table>
 <tr>
 <td><b>'.$lang['292'].'</b></td>
-<td><input type="text" name="nazwa" style="width:250px;" value="'.$row['gi_nazwa'].'"></td>
+<td><input type="text" name="nazwa" style="width:250px;" value="'.$row['fo_fd'].'"><br /></td>
 </tr>';
-if($row['gi_img']!="")
-{
-echo'
-<tr>
-<td></td>
-<td><img src="../upload/gift/'.$row['gi_img'].'"><input type="checkbox" name="del" value="1">'.$lang['299'].'</td>
-</tr>';
-}
+
 echo'
 <tr>
 <td><b>'.$lang['293'].'</b></td>
-<td><input type="text" name="cena" value="'.$row['gi_cena'].'" style="width:250px;"></td>
+<td><input type="text" name="cena" value="'.$row['fo_cena'].'" style="width:250px;"><br /></td>
 </tr>
 <tr>
-<td><b>'.$lang['294'].'</b></td>
-<td><input type="text" name="money"  value="'.$row['gi_money'].'"  style="width:250px;"><br><small>'.$lang['297'].'</small></td>
-</tr>
-<tr>
-<td valign="top"><b>'.$lang['295'].'</b></td>
-<td><input type="hidden" name="MAX_FILE_SIZE" value="10000000000" /><input name="plik1" type="file"/> <br><small>'.$lang['298'].'</small></td>
-</tr>
-</table>
-<input type="submit" value="'.$lang['296'].'" name="upcatg">
+<td valign="top"><b>Opis</b></td>
+<td><textarea name="opis" style="width:250px;">'.$row['fo_opis'].'</textarea><br><br /><br /></td>
+</tr>';
+
+ if($row['fo_custom_file']!=1){
+     $youtubeId = get_you($row['fo_fm']);
+     echo '<tr><td><b>Film</b></td><td'; echo' align="center"><iframe width="360" height="240" src="http://www.youtube.com/embed/'.$youtubeId.'"></iframe><br /><br /></td></tr>';
+     
+     echo '<tr><td><b>Ikonka</b></td><td';  echo' align="center"><img src="http://i2.ytimg.com/vi/'.$youtubeId.'/default.jpg"> '; 
+     echo '</td></tr>';
+ }
+ else{
+     echo '<tr><td><b>Film</b></td><td';  echo' align="center">'
+     . '<video controls width="360" height="240" datarel="'.$row['fo_id'].'" dataid="'.$row['fo_user'].'">
+        <source src="/upload/filmy/'.$row['fo_user'].'/'.$row['fo_fm'].'" type="video/'.$row['fo_file_type'].'">
+        <source src="/upload/filmy/'.$row['fo_user'].'/'.$row['fo_fm'].'" type="video/ogg">
+        Your browser does not support the video tag.
+      </video></td></tr>';
+     echo '<tr><td><b>Ikonka</b></td><td '; echo' align="center"><img style="float:left;" class="filmMiniaturka" src="/upload/filmy/'.$row['fo_user'].'/'.$row['fo_thumb'].'">';
+     
+        echo '
+   <br /><br />
+
+   <button type="button" id="snap" class="btn btn-warning">Zmień miniaturke</button>
+   <br /></td></tr>';
+     
+ }
+
+echo '
+
+</table>';
+
+
+     echo '
+
+<input type="hidden" value="'.$row['fo_id'].'" name="id">
+<br /><br />
+<input type="submit" class="btn btn-primary" value="'.$lang['296'].'" name="upcatg">
 </form>
 
 
 ';
 $idk=$row['gi_id'];
 }
+?>
 
-if($idk=="")
-{
-echo'<center><b>'.$lang['300'].'</b></center>';
-}
+<canvas></canvas>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready(function(){
+         // Get handles on the video and canvas elements
+            var video = document.querySelector('video');
+            var canvas = document.querySelector('canvas');
+            // Get a handle on the 2d context of the canvas element
+            var context = canvas.getContext('2d');
+            // Define some vars required later
+            var w, h, ratio;
+
+            // Add a listener to wait for the 'loadedmetadata' state so the video's dimensions can be read
+//            video.addEventListener('loadedmetadata', function() {
+//                    // Calculate the ratio of the video's width to height
+//                    ratio = video.videoWidth / video.videoHeight;
+//                    // Define the required width as 100 pixels smaller than the actual video's width
+//                    w = video.videoWidth - 100;
+//                    // Calculate the height based on the video's width and the ratio
+//                    h = parseInt(w / ratio, 10);
+//                    // Set the canvas width and height to the values just calculated
+//                    canvas.width = w;
+//                    canvas.height = h;			
+//            }, false);*}
+ratio = video.videoWidth / video.videoHeight;
+			// Define the required width as 100 pixels smaller than the actual video's width
+			w = 120;
+			// Calculate the height based on the video's width and the ratio
+			h = 90;
+			// Set the canvas width and height to the values just calculated
+			canvas.width = w;
+			canvas.height = h;	
+
+            // Takes a snapshot of the video
+            $('#snap').on('click',function(){
+                    // Define the size of the rectangle that will be filled (basically the entire element)
+                    context.fillRect(0, 0, w, h);
+                    // Grab the image from the video
+                    context.drawImage(video, 0, 0, w, h);
+                    var dataURL = canvas.toDataURL();
+                    $.ajax({
+                        type: "POST",
+                        url: "/wyk/upload-image.php",
+                        data: { 
+                                id: video.getAttribute("datarel"),
+                                uid: video.getAttribute("dataid"),
+                           imgBase64: dataURL
+                        }
+                    }).done(function(o) {
+                        var result = jQuery.parseJSON(o);
+                        $('.filmMiniaturka').attr('src',result.url);
+                        console.log('saved'); 
+                        // If you want the file to be visible in the browser 
+                        // - please modify the callback in javascript. All you
+                        // need is to return the url to the file, you just saved 
+                        // and than put the image in your browser.
+                      });
+            
+            });
+    })
+           
+
+</script>
+<?php 
 
 }
 
 
 ?>
+<style>
+    canvas{
+        top:-10000px;
+        position:fixed;
+    }
+</style>

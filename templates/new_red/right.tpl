@@ -2,7 +2,7 @@
 <div class="site_body_right">
             <!----Reklama menu----->
 {if $rmenuu==1 or ($rmenuu==2 and $user_id=="") or ($rmenuu==3 and $vipendd<=$vip_time)}
-{$rmenu}
+{*{$rmenu}*}
 {/if}
 <!----Reklama menu----->
 

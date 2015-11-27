@@ -1,5 +1,9 @@
 AddHandler application/x-httpd-php54 php
 Options FollowSymLinks
+
+php_value upload_max_filesize 500M
+php_value post_max_size 500M
+
 RewriteEngine On
 
 RewriteRule ^szukaj/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/$ szukaj.php?od=$1&do=$2&plec=$3&online=$4&zdjecie=$5&woj=$6&miasto=$7
@@ -17,6 +21,13 @@ RewriteRule ^temat/([0-9]*)/(.*)$ temat.php?id=$1
 RewriteRule ^grupy/(.*)/(.*)/$ grupy.php?go=$1&stan=$2
 
 RewriteRule ^grupy/$ grupy.php
+
+
+RewriteRule ^user/kupione-filmy/$ kupione-filmy.php
+
+RewriteRule ^filmy/$ filmy.php
+
+RewriteRule ^filmy/([0-9]*)$ singlefilm.php?id=$1 [QSA]
 
 RewriteRule ^grupa/([0-9]*)/(.*)_(.*):(.*)$ grupa.php?id=$1&go=$3&stan=$4
 

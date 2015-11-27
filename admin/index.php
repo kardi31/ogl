@@ -12,10 +12,22 @@ if($_GET['page']=="ustawienia" or $_GET['page']=="")
 include("module/ustawienia.php");
 //-----------------------------
 }
+else if($_GET['page']=="reklama")
+{
+//-----------------------------
+include("module/reklama.php");
+//-----------------------------
+}
 else if($_GET['page']=="news")
 {
 //-----------------------------
 include("module/news.php");
+//-----------------------------
+}
+else if($_GET['page']=="filmy")
+{
+//-----------------------------
+include("module/filmy.php");
 //-----------------------------
 }
 else if($_GET['page']=="faq")

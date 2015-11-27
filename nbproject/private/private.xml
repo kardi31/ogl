@@ -15,7 +15,6 @@
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/panel-ogl.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/panel-ogl.tpl</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/css/page.css</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/style.css</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/ustawienia.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/ust_up_p.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/index.php</file>
@@ -31,9 +30,26 @@
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/ust.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/moje-filmy.tpl</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/moje-filmy.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/include/PhpVideoToolkit/examples/includes/config.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/wyk/ezum.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/wyk/upload-image.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/.htaccess</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/filmy.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/filmy.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/singlefilm.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/singlefilm.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/wyk/mov-access.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/wyk/grupa.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/right.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/footer.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/right.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/panele/logowanie/index.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/menu.logowanie.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/kupione-filmy.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/kupione-filmy.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/profil.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/profil.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/filmy.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/edit-film.php</file>
         </group>
     </open-files>
 </project-private>

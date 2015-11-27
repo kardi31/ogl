@@ -98,8 +98,9 @@
 				<li class="next_li"><a href="/mezczyzni/"><span>{$lang[7]}</span></a></li>
 				{if $user_id>=1}<li class="next_li"><a href="" id="chat_open">Czat <span id="ile_chat_user" style="color:black;"></span></a></li>	{/if}
 				{if $user_id>=1 and $str_in==1}<li class="next_li"><a href="/doladuj-konto/">Konto VIP/Kredyty<span></a></span></li>{/if}
-				<li class="next_li"><a href="/ogloszenia/">Ogłoszenia<span></a></span></li>
-				<li class="next_li"><a href="/kontakt/"><span>{$lang[9]}</a></span></li>
+				<li class="next_li"><a href="/ogloszenia/">Ogłoszenia</a></li>
+				<li class="next_li"><a href="/filmy/">Filmy</a></li>
+				<li class="next_li"><a href="/kontakt/">{$lang[9]}</a></li>
 		
 		</ul>{if $user_id>="1"}{else}
 			<div style="text-align:right;">

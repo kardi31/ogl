@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:10:46
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-25 17:05:31
          compiled from ".\templates\new_red\top.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6342564e1eb3e5f9e5-92834062%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9a62ca49d87a81ee637cb3194fa055ba387570ed' => 
     array (
       0 => '.\\templates\\new_red\\top.tpl',
-      1 => 1448017089,
+      1 => 1448467530,
       2 => 'file',
     ),
   ),
@@ -142,9 +142,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </span></a></li>
 				<?php if ($_smarty_tpl->tpl_vars['user_id']->value>=1) {?><li class="next_li"><a href="" id="chat_open">Czat <span id="ile_chat_user" style="color:black;"></span></a></li>	<?php }?>
 				<?php if ($_smarty_tpl->tpl_vars['user_id']->value>=1&&$_smarty_tpl->tpl_vars['str_in']->value==1) {?><li class="next_li"><a href="/doladuj-konto/">Konto VIP/Kredyty<span></a></span></li><?php }?>
-				<li class="next_li"><a href="/ogloszenia/">Ogłoszenia<span></a></span></li>
-				<li class="next_li"><a href="/kontakt/"><span><?php echo $_smarty_tpl->tpl_vars['lang']->value[9];?>
-</a></span></li>
+				<li class="next_li"><a href="/ogloszenia/">Ogłoszenia</a></li>
+				<li class="next_li"><a href="/filmy/">Filmy</a></li>
+				<li class="next_li"><a href="/kontakt/"><?php echo $_smarty_tpl->tpl_vars['lang']->value[9];?>
+</a></li>
 		
 		</ul><?php if ($_smarty_tpl->tpl_vars['user_id']->value>="1") {?><?php } else { ?>
 			<div style="text-align:right;">

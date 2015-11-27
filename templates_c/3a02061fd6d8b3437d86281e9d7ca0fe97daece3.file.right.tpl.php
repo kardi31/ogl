@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:10:57
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-27 13:55:14
          compiled from ".\templates\new_red\right.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15171564e1fafe570a8-17877362%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3a02061fd6d8b3437d86281e9d7ca0fe97daece3' => 
     array (
       0 => '.\\templates\\new_red\\right.tpl',
-      1 => 1448017089,
+      1 => 1448628906,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'user_id' => 0,
     'vipendd' => 0,
     'vip_time' => 0,
-    'rmenu' => 0,
     'menu_nazwa_r' => 0,
     'menu_tresc_r' => 0,
   ),
@@ -33,7 +32,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="site_body_right">
             <!----Reklama menu----->
 <?php if ($_smarty_tpl->tpl_vars['rmenuu']->value==1||($_smarty_tpl->tpl_vars['rmenuu']->value==2&&$_smarty_tpl->tpl_vars['user_id']->value=='')||($_smarty_tpl->tpl_vars['rmenuu']->value==3&&$_smarty_tpl->tpl_vars['vipendd']->value<=$_smarty_tpl->tpl_vars['vip_time']->value)) {?>
-<?php echo $_smarty_tpl->tpl_vars['rmenu']->value;?>
 
 <?php }?>
 <!----Reklama menu----->

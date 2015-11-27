@@ -10,18 +10,30 @@ if($_GET['del']>=1)
 
 if($_POST['zd'])
 {
-	if($user_ile_money>=$ust['oglp'])
+    if(isset($_POST['podsw'])){
+        $podsw = 1;
+        $ogłoszeniePrice = (int)$ust['oglp']+(int)$ust['ust_ogloszenie_podsw'];
+    }
+    else{
+        $podsw = 0;
+        $ogłoszeniePrice = $ust['oglp'];
+    }
+	if($user_ile_money>=$ogłoszeniePrice)
 	{
 		if($_POST['nazwa']<>"" and $_POST['opis']<>"")
 		{
-			$up="UPDATE ".$pre."user SET user_money=user_money-".$ust['oglp']." WHERE user_id='".db_real_escape_string($_SESSION['user_id'])."'";  
+			$up="UPDATE ".$pre."user SET user_money=user_money-".$ogłoszeniePrice." WHERE user_id='".db_real_escape_string($_SESSION['user_id'])."'";  
 			db_query($up);
 			
-			$in = "INSERT INTO ".$pre."faq(faq_nazwa, faq_tresc,faq_data,faq_user,faq_dateadded)VALUES('".$_POST['nazwa']."', '".$_POST['opis']."','".time()."','".$_SESSION['user_id']."','".date('Y-m-d H:i:s')."')";
+                        
+                        
+			$in = "INSERT INTO ".$pre."faq(faq_nazwa, faq_tresc,faq_data,faq_user,faq_dateadded,faq_featured)VALUES('".$_POST['nazwa']."', '".$_POST['opis']."','".time()."','".$_SESSION['user_id']."','".date('Y-m-d H:i:s')."',".$podsw.")";
 
                         db_query($in);
 			
+                        
 			$smarty->assign("addogl","1");
+                        header('Location: /panel-ogl.php');exit;
 		}
 		else
 		{
@@ -36,6 +48,7 @@ if($_POST['zd'])
 	{
 		$smarty->assign("zmpkt","1");
 	}
+                        unset($_POST);
 }
 
 if($_GET['promo'])
@@ -98,6 +111,7 @@ $faq_id[]=$row['faq_id'];
 $faq_nazwa[]=$row['faq_nazwa'];
 $faq_opis[]=$row['faq_tresc'];
 $faq_data[]=date("d-m-Y",$row['faq_data']);
+$faq_podsw[]=$row['faq_featured'];
 
 }
 
@@ -105,6 +119,7 @@ $smarty->assign("faq_id",$faq_id);
 $smarty->assign("faq_nazwa",$faq_nazwa);
 $smarty->assign("faq_opis",$faq_opis);
 $smarty->assign("faq_data",$faq_data);
+$smarty->assign("faq_podsw",$faq_podsw);
 
 $smarty->assign('ust_ogloszenie_promo',$ust['ust_ogloszenie_promo']);
 $smarty->assign('ust_ogloszenie_podsw',$ust['ust_ogloszenie_podsw']);

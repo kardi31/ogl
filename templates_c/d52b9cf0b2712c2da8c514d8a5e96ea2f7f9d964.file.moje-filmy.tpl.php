@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-25 13:59:58
+<?php /* Smarty version Smarty-3.1.15, created on 2015-11-26 16:44:33
          compiled from ".\templates\new_red\moje-filmy.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1312856549078e83ec8-14847780%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd52b9cf0b2712c2da8c514d8a5e96ea2f7f9d964' => 
     array (
       0 => '.\\templates\\new_red\\moje-filmy.tpl',
-      1 => 1448456397,
+      1 => 1448552671,
       2 => 'file',
     ),
   ),
@@ -28,6 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fo_fm' => 0,
     'fo_thumb' => 0,
     'fo_user' => 0,
+    'fo_file_type' => 0,
     'fo_fd' => 0,
     'fo_opis' => 0,
     'fo_cena' => 0,
@@ -70,7 +71,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <th colspan="2" valign="top">1. Podaj nazwę filmiku</th>
     </tr>
     <tr>
-        <td colspan="2"><input name="nazwa" type="text" style="width:450px;"/></td>
+        <td colspan="2"><input required name="nazwa" type="text" style="width:450px;"/></td>
     </tr>
     
     <tr>
@@ -108,7 +109,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <th colspan="2" valign="top">3. Dodaj opis</th>
     </tr>
     <tr>
-        <td colspan="2"><textarea name="opis" style="width:450px;height:50px"></textarea></td>
+        <td colspan="2"><textarea required name="opis" style="width:450px;height:50px"></textarea></td>
     </tr>
     <tr>
         <td colspan="2"><br /><br /></td>
@@ -186,13 +187,14 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smar
 /default.jpg">
     
     <?php } else { ?>
-        <?php if (!$_smarty_tpl->tpl_vars['fo_thumb']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]) {?>
+        <?php if (!strlen($_smarty_tpl->tpl_vars['fo_thumb']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']])) {?>
             <video width="120" height="90" datarel='<?php echo $_smarty_tpl->tpl_vars['fo_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 ' dataid='<?php echo $_smarty_tpl->tpl_vars['fo_user']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 '>
                 <source src="/upload/filmy/<?php echo $_smarty_tpl->tpl_vars['fo_user']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 /<?php echo $_smarty_tpl->tpl_vars['fo_fm']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-" type="video/mp4">
+" type="video/<?php echo $_smarty_tpl->tpl_vars['fo_file_type']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+">
                 <source src="/upload/filmy/<?php echo $_smarty_tpl->tpl_vars['fo_user']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 /<?php echo $_smarty_tpl->tpl_vars['fo_fm']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 " type="video/ogg">

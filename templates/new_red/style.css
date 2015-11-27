@@ -741,3 +741,34 @@ div.cookie-alert p {
 .ogloszenieRow.featured p{
     max-width:85%;
 }
+
+ .singlefilmRow .description{
+    margin-top:8px;
+    padding-left:2px;
+    padding-right:2px;
+    font-size:14px;
+}
+.singlefilmRow strong{
+    font-size: 14px;
+    display: block;
+    margin: 4px 0px;
+}
+
+.singlefilmRow div.small{
+    margin-bottom:5px;
+}
+.singlefilmRow{
+    width:33%;
+    float:left;
+    margin-bottom:20px;
+}
+.clearfix:after,.clearfix:before{
+    display:block;
+    clear:both;
+    content:" ";
+}
+
+.msgInfo{
+    color:red;
+    font-size:18px;
+}
