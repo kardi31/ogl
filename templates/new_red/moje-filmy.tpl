@@ -59,7 +59,7 @@
     <tr>
         <td colspan="2"><br /></td>
     </tr>
-    <tr>
+  {*  <tr>
         <th colspan="2" valign="top">3. Dodaj opis</th>
     </tr>
     <tr>
@@ -67,9 +67,9 @@
     </tr>
     <tr>
         <td colspan="2"><br /><br /></td>
-    </tr>
+    </tr>*}
     <tr>
-        <th colspan="2" valign="top">4. Ustal cene (ilość kredytów)</th>
+        <th colspan="2" valign="top">3. Ustal cene (ilość kredytów)</th>
     </tr>
     <tr>
         <td colspan="2">

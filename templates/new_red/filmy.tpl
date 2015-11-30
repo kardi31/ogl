@@ -33,7 +33,7 @@
                                         <img src='/upload/filmy/{$row['fo_user']}/{$row['fo_thumb']}' style='width:120px;height:90px;' />
                                     {/if}
                                 {/if}
-                                <div class='description'>{$row['fo_fd']}</div>                                    
+{*                                <div class='description'>{$row['fo_fd']}</div>                                    *}
                             </div>
                 </a>
                     </div>
@@ -68,6 +68,9 @@
                 clear:both;
                 content:" ";
             }
+            
+            .filmyRow strong{
+            color:blue;font-size:14px;}
             
         </style>
 {include file="$templa/right.tpl"}
