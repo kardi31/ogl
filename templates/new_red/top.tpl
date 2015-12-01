@@ -114,9 +114,28 @@
 
 
 <div class="site_body">
+        
+        <script>
+            $(document).ready(function(){
+            $('.bxsliderTop').bxSlider({
+                mode: 'fade',
+                slideWidth: 728,
+                auto: true,
+                pause: 12000,
+                randomStart: true,
+                captions: false,
+                pager: false
+            });
+            });
+</script>
 {if $t_in=="tak" and $user_id==""}<div class="site_body_content_all">{else}<div class="site_body_content">{/if}
 
 
+    <ul class="bxsliderTop bxslider">
+        {foreach from=$topads item=ad}
+            <li><a href="{$ad['website']}" title='{$ad['name']}'><img title='{$ad['name']}' alt='{$ad['name']}' src='/images/ad/{$ad['file']}' /></a></li>
+        {/foreach}
+    </ul>
 
         
 

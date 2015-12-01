@@ -58,14 +58,16 @@ function cena_pkt(cenapkt){
 
 function potwierdz()
 {
-  if (confirm("Czy na pewno chesz skasowaæ?")==false)
+  if (confirm("Czy na pewno chesz skasowaï¿½?")==false)
   return false;
 }
 
 
 function ukryj() {
-
-document.getElementById("ukryj").style.display="none";
+var ukryj = document.getElementById("ukryj");
+if(ukryj){
+    ukryj.style.display="none";
+}
 }
 
 

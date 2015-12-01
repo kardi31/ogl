@@ -25,6 +25,7 @@
 <a href="pw/" class="mb_buta"><div class="mb_but">{if $newpw>=1}<span style="color:black;">{$lang[129]} ({$newpw})</span>{else}{$lang[129]}{/if}</div></a>
 <a href="zaproszenia/" class="mb_buta"><div class="mb_but">{if $newzp>=1}<span style="color:black;">{$lang[130]} ({$newzp})</span>{else}{$lang[130]}{/if}</div></a>
 <a href="profil/{$user_nickn}/{$user_id}" class="mb_buta"><div class="mb_but">{$lang[131]}</div></a><br>
+<a href="/dodaj-reklame/" class="mb_buta"><div class="mb_but">Dodaj reklame</div></a>
 {if $user_adm=="adm"}<a href="{$site_url}admin/" class="mb_buta"><div class="mb_but">{$lang[653]}</div></a><br>{/if}
 <a href="logout.php" class="mb_buta"><div class="mb_but">{$lang[132]}</div></a>
 </b>

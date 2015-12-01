@@ -1,4 +1,35 @@
-
+<div class="bxSliderBottomWrapper">
+<ul class="bxsliderBottom bxslider">
+    {foreach from=$bottom1ads item=ad}
+        <li><a href="{$ad['website']}"  title='{$ad['name']}'><img title='{$ad['name']}' alt='{$ad['name']}' src='/images/ad/{$ad['file']}' /></a></li>
+    {/foreach}
+</ul>
+</div>
+<div class="bxSliderBottomWrapper">
+<ul class="bxsliderBottom bxslider">
+    {foreach from=$bottom2ads item=ad}
+        <li><a href="{$ad['website']}" title='{$ad['name']}'><img title='{$ad['name']}' alt='{$ad['name']}' src='/images/ad/{$ad['file']}' /></a></li>
+    {/foreach}
+</ul>
+</div>
+<div class="bxSliderBottomWrapper">
+<ul class="bxsliderBottom bxslider">
+    {foreach from=$bottom3ads item=ad}
+        <li><a href="{$ad['website']}" title='{$ad['name']}'><img title='{$ad['name']}' alt='{$ad['name']}' src='/images/ad/{$ad['file']}' /></a></li>
+    {/foreach}
+</ul>
+</div>
+<script>
+    $('.bxsliderBottom').bxSlider({
+        mode: 'fade',
+        slideWidth: 300,
+        auto: true,
+        pause: 12000,
+        randomStart: true,
+        captions: false,
+        pager: false
+    });
+</script>
 	</div>
 
 </div>

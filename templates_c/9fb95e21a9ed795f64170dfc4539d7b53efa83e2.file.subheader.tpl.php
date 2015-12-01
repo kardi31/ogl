@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-25 07:19:05
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-01 10:56:40
          compiled from ".\templates\new_red\subheader.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11937564e1eb3d8e492-40904968%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9fb95e21a9ed795f64170dfc4539d7b53efa83e2' => 
     array (
       0 => '.\\templates\\new_red\\subheader.tpl',
-      1 => 1448432061,
+      1 => 1448901389,
       2 => 'file',
     ),
   ),
@@ -60,6 +60,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <script type="text/javascript" src="/js/jQuery2.js"></script>
 <script type="text/javascript" src="/js/overlib_red2.js"><!-- overLIB (c) Erik Bosrup --></script>
+
+
+<link href="/include/bxslider/jquery.bxslider.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/include/bxslider/jquery.bxslider.min.js"></script>
 
  <script type="text/javascript">
  var RecaptchaOptions = {

@@ -8,7 +8,6 @@ $inc="";
 $tresc="";
 
 $menu_nazwa_r[]=$row['menu_nazwa'];
-
 if($row['menu_t']!="")
 {
   $inc='<?php include("panele/'.$row[menu_t].'/index.php");?>';
@@ -26,6 +25,17 @@ else
 
 }
 
+
+$rightads = array();
+$ad_query='SELECT * FROM '.$pre.'ad WHERE position="topright" and date_to>NOW() and active = 1'; 
+$ad_result = db_query($ad_query) or die(db_error());
+while ($ad_row = db_fetch($ad_result)) 
+{
+    array_push($rightads,$ad_row);
+}
+
+
+$smarty->assign("rightads",$rightads);
 $smarty->assign("menu_nazwa_r",$menu_nazwa_r);
 $smarty->assign("menu_tresc_r",$menu_tresc_r);
 ?>

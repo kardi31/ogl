@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-26 16:44:33
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-01 17:05:39
          compiled from ".\templates\new_red\moje-filmy.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1312856549078e83ec8-14847780%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd52b9cf0b2712c2da8c514d8a5e96ea2f7f9d964' => 
     array (
       0 => '.\\templates\\new_red\\moje-filmy.tpl',
-      1 => 1448552671,
+      1 => 1448900656,
       2 => 'file',
     ),
   ),
@@ -96,7 +96,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <h4>Wrzuć własny film</h4>
         </td>
         <td>
-            
+            Akceptowany format plików : mp4, wemb,ogv<br />
             <input name="custom_file" type="file" value="1"/> 
         </td>
         <input name="prv" type="hidden" value="0"/>
@@ -105,17 +105,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <tr>
         <td colspan="2"><br /></td>
     </tr>
+  
     <tr>
-        <th colspan="2" valign="top">3. Dodaj opis</th>
-    </tr>
-    <tr>
-        <td colspan="2"><textarea required name="opis" style="width:450px;height:50px"></textarea></td>
-    </tr>
-    <tr>
-        <td colspan="2"><br /><br /></td>
-    </tr>
-    <tr>
-        <th colspan="2" valign="top">4. Ustal cene (ilość kredytów)</th>
+        <th colspan="2" valign="top">3. Ustal cene (ilość kredytów)</th>
     </tr>
     <tr>
         <td colspan="2">
@@ -321,7 +313,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smar
                           });
 		}
     //do something special
-  }, 2000);
+  }, 4500);
     })
 		 
 	</script>

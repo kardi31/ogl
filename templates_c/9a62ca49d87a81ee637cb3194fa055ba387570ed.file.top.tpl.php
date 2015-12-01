@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-25 17:05:31
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-01 13:35:17
          compiled from ".\templates\new_red\top.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6342564e1eb3e5f9e5-92834062%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9a62ca49d87a81ee637cb3194fa055ba387570ed' => 
     array (
       0 => '.\\templates\\new_red\\top.tpl',
-      1 => 1448467530,
+      1 => 1448973191,
       2 => 'file',
     ),
   ),
@@ -31,6 +31,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lang' => 0,
     'str_in' => 0,
     't_in' => 0,
+    'topads' => 0,
+    'ad' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -160,9 +162,37 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 
 <div class="site_body">
+        
+        <script>
+            $(document).ready(function(){
+            $('.bxsliderTop').bxSlider({
+                mode: 'fade',
+                slideWidth: 728,
+                auto: true,
+                pause: 12000,
+                randomStart: true,
+                captions: false,
+                pager: false
+            });
+            });
+</script>
 <?php if ($_smarty_tpl->tpl_vars['t_in']->value=="tak"&&$_smarty_tpl->tpl_vars['user_id']->value=='') {?><div class="site_body_content_all"><?php } else { ?><div class="site_body_content"><?php }?>
 
 
+    <ul class="bxsliderTop bxslider">
+        <?php  $_smarty_tpl->tpl_vars['ad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ad']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['topads']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['ad']->key => $_smarty_tpl->tpl_vars['ad']->value) {
+$_smarty_tpl->tpl_vars['ad']->_loop = true;
+?>
+            <li><a href="<?php echo $_smarty_tpl->tpl_vars['ad']->value['website'];?>
+" title='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+'><img title='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+' alt='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+' src='/images/ad/<?php echo $_smarty_tpl->tpl_vars['ad']->value['file'];?>
+' /></a></li>
+        <?php } ?>
+    </ul>
 
         
 

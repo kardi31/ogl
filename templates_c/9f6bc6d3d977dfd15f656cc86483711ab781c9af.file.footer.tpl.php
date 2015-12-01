@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:10:46
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-01 10:56:41
          compiled from ".\templates\new_red\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23476564e1eb4193c34-22035708%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9f6bc6d3d977dfd15f656cc86483711ab781c9af' => 
     array (
       0 => '.\\templates\\new_red\\footer.tpl',
-      1 => 1448017089,
+      1 => 1448962702,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_564e1eb41bc9b2_38791055',
   'variables' => 
   array (
+    'bottom1ads' => 0,
+    'ad' => 0,
+    'bottom2ads' => 0,
+    'bottom3ads' => 0,
     'lang' => 0,
     'site_url' => 0,
     'rfotu' => 0,
@@ -29,7 +33,65 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_564e1eb41bc9b2_38791055')) {function content_564e1eb41bc9b2_38791055($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_564e1eb41bc9b2_38791055')) {function content_564e1eb41bc9b2_38791055($_smarty_tpl) {?><div class="bxSliderBottomWrapper">
+<ul class="bxsliderBottom bxslider">
+    <?php  $_smarty_tpl->tpl_vars['ad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ad']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['bottom1ads']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['ad']->key => $_smarty_tpl->tpl_vars['ad']->value) {
+$_smarty_tpl->tpl_vars['ad']->_loop = true;
+?>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['ad']->value['website'];?>
+"  title='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+'><img title='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+' alt='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+' src='/images/ad/<?php echo $_smarty_tpl->tpl_vars['ad']->value['file'];?>
+' /></a></li>
+    <?php } ?>
+</ul>
+</div>
+<div class="bxSliderBottomWrapper">
+<ul class="bxsliderBottom bxslider">
+    <?php  $_smarty_tpl->tpl_vars['ad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ad']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['bottom2ads']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['ad']->key => $_smarty_tpl->tpl_vars['ad']->value) {
+$_smarty_tpl->tpl_vars['ad']->_loop = true;
+?>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['ad']->value['website'];?>
+" title='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+'><img title='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+' alt='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+' src='/images/ad/<?php echo $_smarty_tpl->tpl_vars['ad']->value['file'];?>
+' /></a></li>
+    <?php } ?>
+</ul>
+</div>
+<div class="bxSliderBottomWrapper">
+<ul class="bxsliderBottom bxslider">
+    <?php  $_smarty_tpl->tpl_vars['ad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ad']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['bottom3ads']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['ad']->key => $_smarty_tpl->tpl_vars['ad']->value) {
+$_smarty_tpl->tpl_vars['ad']->_loop = true;
+?>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['ad']->value['website'];?>
+" title='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+'><img title='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+' alt='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+' src='/images/ad/<?php echo $_smarty_tpl->tpl_vars['ad']->value['file'];?>
+' /></a></li>
+    <?php } ?>
+</ul>
+</div>
+<script>
+    $('.bxsliderBottom').bxSlider({
+        mode: 'fade',
+        slideWidth: 300,
+        auto: true,
+        pause: 12000,
+        randomStart: true,
+        captions: false,
+        pager: false
+    });
+</script>
 	</div>
 
 </div>

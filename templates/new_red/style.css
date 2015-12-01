@@ -772,3 +772,49 @@ div.cookie-alert p {
     color:red;
     font-size:18px;
 }
+
+.bxslider{
+    padding:0px;
+    margin:0px;
+    /*overflow:hidden;*/
+}
+
+.bxsliderTop,.bxsliderTop img{
+    max-height:90px;
+}
+.bxsliderTop{
+    margin-bottom:10px;
+}
+.bxsliderRight,.bxsliderRight img{
+    max-height:210px;
+}
+
+.bxsliderRight{
+    display:block;
+    height:100%;
+    margin-bottom:20px;
+}
+
+.bx-wrapper div.bx-viewport{
+    border:none;
+    box-shadow:none;
+}
+.bxsliderBottom,.bxsliderBottom img{
+    max-height:250px;
+}
+
+
+.bxSliderBottomWrapper{
+    width:300px;
+    float:left;
+    margin-right:10px;
+    height:250px;
+}
+
+.bxsliderTop{
+    text-align: center;
+}
+
+.bx-wrapper img{
+    margin: 0 auto;
+}

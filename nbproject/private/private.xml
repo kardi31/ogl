@@ -3,35 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/css/page.css</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/db_connect.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/filmy.tpl</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/style.css</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/style/default.css</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/uploadBgImage.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/kup.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/wyk/upload-image.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/include/ust.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/moje-filmy.tpl</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/index.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/chooseBgImage.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/moje-filmy.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/panel-ogl.tpl</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/include/db_function.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/faq.tpl</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/index.tpl</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/ustawienia.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/tlo.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/subheader.tpl</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/subheader.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/faq.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/index.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/subheader.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/ustawienia_reklama.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/right.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/right.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/top.tpl</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/panel-ogl.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/subheader.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/css/page.css</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/style.css</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/js/function.js</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/subheader.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/upload-ad.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/reklama.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/footer.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/footer.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/edit-ad.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/db_connect.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/dodaj-reklame.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/dodaj-reklame.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/include/ust.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/.htaccess</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/upload-reklame.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/moje-filmy.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/panele/logowanie/index.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/ustawienia.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/ust_up_a.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/ust_up_p.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/faq.php</file>
         </group>
     </open-files>
 </project-private>

@@ -144,6 +144,57 @@ if($ust['kos']=="1" and $_SESSION['user_18']!="ok")
 
 }
 
+$topads = array();
+$bottom1ads = array();
+$bottom2ads = array();
+$bottom3ads = array();
+//$bottom4ads = array();
+$ad_query='SELECT * FROM '.$pre.'ad WHERE position="top" and date_to>NOW() and active = 1'; 
+$ad_result = db_query($ad_query) or die(db_error());
+while ($ad_row = db_fetch($ad_result)) 
+{
+    array_push($topads,$ad_row);
+}
+
+
+
+$ad_query='SELECT * FROM '.$pre.'ad WHERE position="bottom1" and date_to>NOW() and active = 1'; 
+$ad_result = db_query($ad_query) or die(db_error());
+while ($ad_row = db_fetch($ad_result)) 
+{
+    array_push($bottom1ads,$ad_row);
+}
+
+$ad_query='SELECT * FROM '.$pre.'ad WHERE position="bottom2" and date_to>NOW() and active = 1'; 
+$ad_result = db_query($ad_query) or die(db_error());
+while ($ad_row = db_fetch($ad_result)) 
+{
+    array_push($bottom2ads,$ad_row);
+}
+
+$ad_query='SELECT * FROM '.$pre.'ad WHERE position="bottom3" and date_to>NOW() and active = 1'; 
+$ad_result = db_query($ad_query) or die(db_error());
+while ($ad_row = db_fetch($ad_result)) 
+{
+    array_push($bottom3ads,$ad_row);
+}
+
+//$ad_query='SELECT * FROM '.$pre.'ad WHERE position="bottom4" and date_to>NOW() and active = 1'; 
+//$ad_result = db_query($ad_query) or die(db_error());
+//while ($ad_row = db_fetch($ad_result)) 
+//{
+//    array_push($bottom4ads,$ad_row);
+//}
+
+if(!isset($_SESSION['user_id'])){
+    $smarty->assign("topads",$topads);
+}
+
+$smarty->assign("bottom1ads",$bottom1ads);
+$smarty->assign("bottom2ads",$bottom2ads);
+$smarty->assign("bottom3ads",$bottom3ads);
+//$smarty->assign("bottom4ads",$bottom4ads);
+
 
 include("left.php");
 include("right.php");

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-27 13:55:14
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-01 17:34:07
          compiled from ".\templates\new_red\right.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15171564e1fafe570a8-17877362%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3a02061fd6d8b3437d86281e9d7ca0fe97daece3' => 
     array (
       0 => '.\\templates\\new_red\\right.tpl',
-      1 => 1448628906,
+      1 => 1448987646,
       2 => 'file',
     ),
   ),
@@ -19,11 +19,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_564e1fafe7f2a1_29551432',
   'variables' => 
   array (
-    'rmenuu' => 0,
-    'user_id' => 0,
-    'vipendd' => 0,
-    'vip_time' => 0,
+    'rightads' => 0,
+    'ad' => 0,
     'menu_nazwa_r' => 0,
+    'user_id' => 0,
     'menu_tresc_r' => 0,
   ),
   'has_nocache_code' => false,
@@ -31,9 +30,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_564e1fafe7f2a1_29551432')) {function content_564e1fafe7f2a1_29551432($_smarty_tpl) {?></div>
 <div class="site_body_right">
             <!----Reklama menu----->
-<?php if ($_smarty_tpl->tpl_vars['rmenuu']->value==1||($_smarty_tpl->tpl_vars['rmenuu']->value==2&&$_smarty_tpl->tpl_vars['user_id']->value=='')||($_smarty_tpl->tpl_vars['rmenuu']->value==3&&$_smarty_tpl->tpl_vars['vipendd']->value<=$_smarty_tpl->tpl_vars['vip_time']->value)) {?>
 
-<?php }?>
+
+<ul class="bxsliderRight bxslider">
+    <?php  $_smarty_tpl->tpl_vars['ad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ad']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['rightads']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['ad']->key => $_smarty_tpl->tpl_vars['ad']->value) {
+$_smarty_tpl->tpl_vars['ad']->_loop = true;
+?>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['ad']->value['website'];?>
+" title='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+'><img title='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+' alt='<?php echo $_smarty_tpl->tpl_vars['ad']->value['name'];?>
+' src='/images/ad/<?php echo $_smarty_tpl->tpl_vars['ad']->value['file'];?>
+' /></a></li>
+    <?php } ?>
+</ul>
+<br />
 <!----Reklama menu----->
 
 		<?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['id'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['id']);
@@ -69,4 +82,16 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smar
 		<?php endfor; endif; ?>
 	
 		</div>
-<?php }} ?>
+<script>
+            $(document).ready(function(){
+    $('.bxsliderRight').bxSlider({
+        mode: 'fade',
+        slideWidth: 210,
+        auto: true,
+        pause: 12000,
+        randomStart: true,
+        captions: false,
+        pager: false
+    });
+            });
+</script><?php }} ?>

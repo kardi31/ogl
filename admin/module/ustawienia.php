@@ -440,6 +440,15 @@ echo'
 <td valign="top">Podświetlanie ogłoszenia</td><td><input type="text" name="ust_ogloszenie_podsw" value="'.$ust['ust_ogloszenie_podsw'].'" style="width:200px;"><br>0 = Darmowy</td>
 </tr>
 <tr>
+<td valign="top">Reklama - góra strony</td><td><input type="text" name="ust_reklama_top" value="'.$ust['reklama_top'].'" style="width:200px;"></td>
+</tr>
+<tr>
+<td valign="top">Reklama - prawa strona nad menu</td><td><input type="text" name="ust_reklama_right" value="'.$ust['reklama_right'].'" style="width:200px;"></td>
+</tr>
+<tr>
+<td valign="top">Reklama - dół strony</td><td><input type="text" name="ust_reklama_bottom" value="'.$ust['reklama_bottom'].'" style="width:200px;"></td>
+</tr>
+<tr>
 <td valign="top">'.$lang['91'].'</td><td valign="top">
 <select name="edytor">
 <option value="0"'; if($ust['edytor']=="0"){echo' selected="selected"';}echo'>'.$lang['92'].'</option>

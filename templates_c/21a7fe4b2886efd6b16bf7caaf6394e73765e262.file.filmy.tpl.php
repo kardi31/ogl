@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-25 18:15:52
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-01 12:17:32
          compiled from ".\templates\new_red\filmy.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:159565655e42cdc6c50-87472134%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '21a7fe4b2886efd6b16bf7caaf6394e73765e262' => 
     array (
       0 => '.\\templates\\new_red\\filmy.tpl',
-      1 => 1448471751,
+      1 => 1448900656,
       2 => 'file',
     ),
   ),
@@ -54,7 +54,7 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
 
                         <br />
                         Cena: <b><?php if ($_smarty_tpl->tpl_vars['row']->value['fo_cena']!=0) {?> <?php echo $_smarty_tpl->tpl_vars['row']->value['fo_cena'];?>
- <?php } else { ?> Darmowy <?php }?></b>
+ kredytów <?php } else { ?> Darmowy <?php }?></b>
                     </div>
                     <div>
                         
@@ -86,8 +86,7 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
 ' style='width:120px;height:90px;' />
                                     <?php }?>
                                 <?php }?>
-                                <div class='description'><?php echo $_smarty_tpl->tpl_vars['row']->value['fo_fd'];?>
-</div>                                    
+
                             </div>
                 </a>
                     </div>
@@ -122,6 +121,9 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
                 clear:both;
                 content:" ";
             }
+            
+            .filmyRow strong{
+            color:blue;font-size:14px;}
             
         </style>
 <?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['templa']->value)."/right.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>

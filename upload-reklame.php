@@ -1,8 +1,24 @@
 <?php
 session_start();
-include("../db_connect.php");
-include("../include/ust.php");
-$target_dir = "../images/ad/";
+include("db_connect.php");
+include("include/ust.php");
+$target_dir = "images/ad/";
+
+$Query='SELECT * FROM '.$pre.'user WHERE user_id="'.db_real_escape_string($_SESSION['user_id']).'"'; 
+$result = db_query($Query) or die(db_error());
+$row = db_fetch($result);
+$user_moneyp=$row['user_money'];
+
+if(!isset($ust['reklama_'.$_POST['position']])){
+    header('Location: /dodaj-reklame?msg2=hacker');
+    exit;
+}
+
+$positionPrice = $ust['reklama_'.$_POST['position']];
+if($user_moneyp<$positionPrice){
+    header('Location: /dodaj-reklame?msg2=za+malo+kredytow');
+    exit;
+}
 
 $adName = htmlspecialchars($_POST['name']);
 
@@ -23,30 +39,32 @@ if(isset($_POST["submit"])) {
     }
 }
 // Check if file already exists
-if (file_exists($target_file)) {
-    $msg = "Sorry, file already exists.";
-    $uploadOk = 0;
+$key = 1;
+while(file_exists($new_target_file)) {
+//    $msg = "Plik już istnieje";
+//    $uploadOk = 0;
+    $new_target_file = $target_dir . createSlug($adName).$key.".".$imageFileType;
+    $key++;
 }
 // Check file size
-if ($_FILES["plik1"]["size"] > 500000) {
-    $msg = "Sorry, your file is too large.";
+if ($_FILES["plik1"]["size"] > 2097152) {
+    $msg = "Za duży plik";
     $uploadOk = 0;
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
-    $msg = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $msg = "Akceptowany format to jpg,png oraz gif.";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    var_dump($msg);
-    var_dump('zle0');exit;
-    $msg = "Sorry, your file was not uploaded.";
+    $msg2 = "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["plik1"]["tmp_name"], $new_target_file)) {
-        $msg = "The file ". basename( $_FILES["plik1"]["name"]). " has been uploaded.";
+        $msg2 = "The file ". basename( $_FILES["plik1"]["name"]). " has been uploaded.";
+        $msg = "Reklama została dodana.";
         
         $filename = basename($_FILES["plik1"]["name"]);
         
@@ -55,15 +73,28 @@ if ($uploadOk == 0) {
             $website = "http://".$website;
         }
         
-        $dateTo = htmlspecialchars($_POST['date_to']);
-        if(!strlen($dateTo)){
-            $dateTo = '2020-01-01';
-        }
+        switch($_POST['position']):
+            case 'top':
+                $postionName = 'top';
+                break;
+            case 'right':
+                $postionName = 'topright';
+                break;
+            case 'bottom':
+                $postionName = 'bottom'.rand(1,3);
+                break;
+        endswitch;
+        
+        $dateTo = date('Y-m-d',strtotime('+1 week'));
+        
+        
+        $up="UPDATE ".$pre."user SET user_money=user_money-".$positionPrice." WHERE user_id='".db_real_escape_string($_SESSION['user_id'])."'";  
+        db_query($up);
         
         $up="INSERT INTO ".$pre."ad(name,website,position,date_to,active,file)VALUES("
                 . "'".$adName."',"
                 . "'".$website."',"
-                . "'".htmlspecialchars($_POST['position'])."',"
+                . "'".$postionName."',"
                 . "'".$dateTo." 00:00:00',"
                 . "1,"
                 . "'".$new_filename."')";
@@ -72,12 +103,11 @@ if ($uploadOk == 0) {
         
         
     } else {
-        var_dump('zle');exit;
-        $msg = "Sorry, there was an error uploading your file.";
+        $msg2 = "Sorry, there was an error uploading your file.";
     }
 }
 
-header("Location: index.php?page=reklama&msg2=".$msg);
+header("Location: /dodaj-reklame?msg2=".$msg);
 
  function createSlug($string, $toLower = true, $space = '-') {
 		$chars=array(

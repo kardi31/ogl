@@ -111,6 +111,8 @@ RewriteRule ^user/kto-ogladal-profil/([0-9]*)$ panel-kv.php?strona=$1
 
 RewriteRule ^user/usun-konto/$ usun-konto.php
 
+RewriteRule ^dodaj-reklame dodaj-reklame.php [QSA]
+
 RewriteRule ^user/usun-konto/([0-9]*)$ usun-konto.php?stan=$1
 
 RewriteRule ^user/moje-zdjecia/$ moje-zdjecia.php

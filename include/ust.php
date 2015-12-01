@@ -173,6 +173,9 @@ while ($row = db_fetch($result))
 	$ust['ust_ogloszenie_promo']=$row['ust_ogloszenie_promo'];
 	$ust['ust_ogloszenie_podsw']=$row['ust_ogloszenie_podsw'];
 	$ust['ust_background']=$row['ust_background'];
+	$ust['reklama_top']=$row['ust_reklama_top'];
+	$ust['reklama_right']=$row['ust_reklama_right'];
+	$ust['reklama_bottom']=$row['ust_reklama_bottom'];
 }
 
 if($ust['wiek']>=1)

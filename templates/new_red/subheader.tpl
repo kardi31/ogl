@@ -20,6 +20,11 @@
 
 <script type="text/javascript" src="/js/jQuery2.js"></script>
 <script type="text/javascript" src="/js/overlib_red2.js"><!-- overLIB (c) Erik Bosrup --></script>
+
+
+<link href="/include/bxslider/jquery.bxslider.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/include/bxslider/jquery.bxslider.min.js"></script>
 {literal}
  <script type="text/javascript">
  var RecaptchaOptions = {
