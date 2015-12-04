@@ -18,8 +18,6 @@
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/edit-ad.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/db_connect.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/dodaj-reklame.tpl</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/dodaj-reklame.php</file>
-            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/include/ust.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/.htaccess</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/upload-reklame.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/moje-filmy.php</file>
@@ -27,6 +25,13 @@
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/module/ustawienia.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/ust_up_a.php</file>
             <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/ust_up_p.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/templates/new_red/index.tpl</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/index.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/index.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/admin/subheader.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/do_pay.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/include/pay_get_sms.php</file>
+            <file>file:/C:/xampp/htdocs/ogloszeniatowarzyskie/kup.php</file>
         </group>
     </open-files>
 </project-private>

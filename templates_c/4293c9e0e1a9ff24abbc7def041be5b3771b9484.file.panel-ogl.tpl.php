@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-27 12:34:55
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-03 11:23:23
          compiled from ".\templates\new_red\panel-ogl.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9802564e263c1be166-23517928%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4293c9e0e1a9ff24abbc7def041be5b3771b9484' => 
     array (
       0 => '.\\templates\\new_red\\panel-ogl.tpl',
-      1 => 1448624094,
+      1 => 1448624827,
       2 => 'file',
     ),
   ),
@@ -145,9 +145,9 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smar
 		
 
 
-
 	</div>
 <?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['templa']->value)."/right.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['templa']->value)."/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 <?php }} ?>

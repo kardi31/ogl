@@ -44,12 +44,12 @@ echo'<div id="ukryj" ><div id="red" style="border-style:solid;border-width:thin;
 if($_GET['v']=="delete")
 {
     
-    $Query='SELECT * FROM '.$pre.'ad WHERE id="'.db_real_escape_string($_GET['id']).'"  ORDER by id DESC '; 
-$result = db_query($Query) or die(db_error());
-while($row=db_fetch($result))
-{
-    unlink('../images/ad/'.$row['file']);
-}
+//    $Query='SELECT * FROM '.$pre.'ad WHERE id="'.db_real_escape_string($_GET['id']).'"  ORDER by id DESC '; 
+//$result = db_query($Query) or die(db_error());
+//while($row=db_fetch($result))
+//{
+//    unlink('../images/ad/'.$row['file']);
+//}
 $del="DELETE FROM ".$pre."ad WHERE id='".db_real_escape_string($_GET['id'])."'";
 db_query($del);
 echo'<div id="ukryj" ><div id="red" style="border-style:solid;border-width:thin;width:400px;height:30px;text-align:center;display:table-cell;vertical-align:middle;border-color:black;background-color:#fde1e1;"><center><b>Reklama usunięta</b></center></div></div><br>';

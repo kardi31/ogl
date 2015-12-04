@@ -23,10 +23,10 @@ if(isset($_POST["submit"])) {
     }
 }
 // Check if file already exists
-if (file_exists($target_file)) {
-    $msg = "Sorry, file already exists.";
-    $uploadOk = 0;
-}
+//if (file_exists($target_file)) {
+//    $msg = "Sorry, file already exists.";
+//    $uploadOk = 0;
+//}
 // Check file size
 if ($_FILES["plik1"]["size"] > 500000) {
     $msg = "Sorry, your file is too large.";
@@ -41,7 +41,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     var_dump($msg);
-    var_dump('zle0');exit;
+    var_dump('Błąd!');exit;
     $msg = "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
@@ -72,7 +72,7 @@ if ($uploadOk == 0) {
         
         
     } else {
-        var_dump('zle');exit;
+        var_dump('Błąd');exit;
         $msg = "Sorry, there was an error uploading your file.";
     }
 }
