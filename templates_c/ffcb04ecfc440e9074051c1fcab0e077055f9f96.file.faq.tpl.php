@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:32:35
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-04 15:42:12
          compiled from ".\templates\new_red\faq.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8149564e279e5e03e0-17227376%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ffcb04ecfc440e9074051c1fcab0e077055f9f96' => 
     array (
       0 => '.\\templates\\new_red\\faq.tpl',
-      1 => 1448019154,
+      1 => 1448624843,
       2 => 'file',
     ),
   ),
@@ -105,4 +105,12 @@ upload/zdjecia/<?php echo $_smarty_tpl->tpl_vars['faq_img']->value[$_smarty_tpl-
 <?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['templa']->value)."/right.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['templa']->value)."/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
-<?php }} ?>
+
+
+
+
+<style>
+    .ogloszenieRow.featured div div{
+        max-width:470px;
+    }
+    </style><?php }} ?>

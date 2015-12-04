@@ -4,13 +4,27 @@
 <base href="/"/>
 <meta http-equiv="content-type" content="text/html; charset={$lang[0]}" />
 
-<title>{$title}</title>
+<title>
+    {if ($title=='Ogłoszenia towarzyskie')}
+        
+        Poznaj swoją drugą połówkę 
+        {else}
+    {$title}
+{/if}
+</title>
 <meta name="keywords" content="{$meta_key}" />
-<meta name="description" content="{if $omnie<>"" and !$omnie|is_array}{$omnie|strip_tags|substr:0:250}{else}{$meta_desc}{/if}" />
+<meta name="description" content="
+      
+    {if ($title!='Ogłoszenia towarzyskie')}
+{if $omnie<>"" and !$omnie|is_array}{$omnie|strip_tags|substr:0:250}{else}{$meta_desc}{/if}
+    {else}
+        {$meta_desc}
+    {/if}
+" />
 
 
 
-<link href="/js/multiple-select-master/multiple-select.css" rel="stylesheet" type="text/css" />
+{*<link href="/js/multiple-select-master/multiple-select.css" rel="stylesheet" type="text/css" />*}
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/function.js"></script>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/smoothness/jquery-ui.css" />

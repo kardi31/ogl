@@ -27,6 +27,7 @@
         mode: 'fade',
         slideWidth: 210,
         auto: true,
+        controls:false,
         pause: 12000,
         randomStart: true,
         captions: false,

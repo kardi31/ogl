@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-12-01 13:35:28
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-04 15:20:43
          compiled from ".\templates\new_red\menu.logowanie.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21675564e1eb340d0f5-31065498%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5d26ad6597cdbf5d2872fa0cf0477b5e4370fd7b' => 
     array (
       0 => '.\\templates\\new_red\\menu.logowanie.tpl',
-      1 => 1448973327,
+      1 => 1449237309,
       2 => 'file',
     ),
   ),
@@ -326,7 +326,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['foos']['last']       = ($_sm
 </form>
 <?php if ($_smarty_tpl->tpl_vars['fb_login']->value=="1") {?>
 <center>
-	<a href="fbc.php?login=fb"><img src="images/facebook_zaloguj.png"></a>
+	<a href="fbc.php?login=fb"><img src="images/facebook_zaloguj.png" alt="Facebook zaloguj"></a>
 <center>
 <?php }?>
 <br/>

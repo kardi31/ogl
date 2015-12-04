@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-11-20 12:10:46
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-04 15:37:05
          compiled from ".\templates\new_red\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:22280564e1eb3865a59-97752604%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '288e938245c00fcebe7a25eb432b2bf175609be9' => 
     array (
       0 => '.\\templates\\new_red\\index.tpl',
-      1 => 1448017089,
+      1 => 1449239524,
       2 => 'file',
     ),
   ),
@@ -65,6 +65,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'regulamin' => 0,
     'tokenr' => 0,
     'token_img' => 0,
+    'k' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -94,7 +95,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <div class="left">
 		
 		<h1 class="ng"><?php echo $_smarty_tpl->tpl_vars['lang']->value[11];?>
-</h1><p>
+</h1>
 
 <center>
 <table >
@@ -144,18 +145,18 @@ images/men.jpg" alt="<?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smart
 upload/zdjecia/<?php echo $_smarty_tpl->tpl_vars['u_img']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 " /><?php }?><br/><center><?php if ($_smarty_tpl->tpl_vars['u_online']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]>=1) {?><img src="images/online.jpg" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value[16];?>
-" key="On"><?php } else { ?><img src="images/ofline.jpg" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value[17];?>
+" key="On"><?php } else { ?><img src="images/ofline.jpg" alt="Offline" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value[17];?>
 " key="Off"><?php }?><b><?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 </b><?php if ($_smarty_tpl->tpl_vars['u_vip']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]>=$_smarty_tpl->tpl_vars['gtime']->value) {?><?php echo $_smarty_tpl->tpl_vars['lang']->value[700];?>
-<?php }?></center></a></td><?php if ($_smarty_tpl->tpl_vars['nrip']->value++%5==0) {?></tr><?php }?>
-
+<?php }?></center></a></td>
+<?php if ($_smarty_tpl->tpl_vars['nrip']->value++%5==0) {?></tr><tr><?php }?>
 <?php endfor; endif; ?>
+<?php if ($_smarty_tpl->tpl_vars['nrip']->value%5!=0) {?></tr><?php }?>
 </table>
 </center>
 		
-		  </p>
 		<h1 class="ng"><?php echo $_smarty_tpl->tpl_vars['lang']->value[18];?>
-</h1><p>
+</h1>
 
 <?php if ($_smarty_tpl->tpl_vars['bo']->value>=1) {?>
 <center>
@@ -206,11 +207,13 @@ images/men.jpg" alt="<?php echo $_smarty_tpl->tpl_vars['u_logino']->value[$_smar
 upload/zdjecia/<?php echo $_smarty_tpl->tpl_vars['u_imgo']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['u_logino']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 " /><?php }?><br/><center><?php if ($_smarty_tpl->tpl_vars['u_onlineo']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]>=1) {?><img src="images/online.jpg" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value[16];?>
-" key="On"><?php } else { ?><img src="images/ofline.jpg" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value[17];?>
+" key="On"><?php } else { ?><img src="images/ofline.jpg" alt="Offline" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value[17];?>
 " key="Off"><?php }?><b><?php echo $_smarty_tpl->tpl_vars['u_logino']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 </b><?php if ($_smarty_tpl->tpl_vars['u_vipo']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]>=$_smarty_tpl->tpl_vars['gtime']->value) {?><?php echo $_smarty_tpl->tpl_vars['lang']->value[700];?>
-<?php }?></center></a></td><?php if ($_smarty_tpl->tpl_vars['nripp']->value++%5==0) {?></tr><?php }?>
+<?php }?></center></a></td>
+<?php if ($_smarty_tpl->tpl_vars['nripp']->value++%5==0) {?></tr><tr><?php }?>
 
+<?php if ($_smarty_tpl->tpl_vars['nripp']->value%5!=0) {?></tr><?php }?>
 <?php endfor; endif; ?>
 </table>
 </center>
@@ -219,23 +222,23 @@ upload/zdjecia/<?php echo $_smarty_tpl->tpl_vars['u_imgo']->value[$_smarty_tpl->
 </b></center>
 <?php }?>
 		
-		  </p>
 	</div>
 <!-- Gdy zalogowany -->
 <?php } else { ?>
 <!-- Gdy nie zalogowany -->
 <div class="site_body_content_all">
 <div style="width:450px;float:left;text-align:center;">
+    <h1 style="text-decoration: none;text-align:left;border:0px;">Poznaj swoją drugą połówkę</h1>
 <?php if ($_smarty_tpl->tpl_vars['in_txt']->value!='') {?><p><?php echo $_smarty_tpl->tpl_vars['in_txt']->value;?>
 </p><?php }?>
 <img src="templates/<?php echo $_smarty_tpl->tpl_vars['templa']->value;?>
-/images/in_f.jpg" key="obrazek">
+/images/in_f.jpg" alt="Poznaj swoją drugą połówke" key="obrazek">
 </div>
 
 <div style="width:450px;float:left;">
 <div class="post_all">
 			<h2 class="title_all">Rejestracja</h2>
-<div class="entry_all"><p>
+<div class="entry_all">
 <?php if ($_smarty_tpl->tpl_vars['user_nick']->value==''&&$_smarty_tpl->tpl_vars['rejestracja']->value==1&&$_smarty_tpl->tpl_vars['regok']->value!=1) {?>
 <form action="<?php echo $_smarty_tpl->tpl_vars['site_url']->value;?>
 register/" method="post">
@@ -407,47 +410,28 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['foo']['last']       = ($_sma
 
 </form>
 <?php }?>
-</p>
 </div>
 </div>
 </div>	
 
 
 <div style="width:100%;float:left;">
-		<h1 class="ng"><?php echo $_smarty_tpl->tpl_vars['lang']->value[20];?>
-</h1><p>
+		<h2 class="ng"><?php echo $_smarty_tpl->tpl_vars['lang']->value[20];?>
+</h2>
 
 <center>
 <table >
 <tr>
-<?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['id'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['id']);
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['name'] = 'id';
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['u_id']->value) ? count($_loop) : max(0, (int) $_loop); unset($_loop);
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['show'] = true;
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['loop'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['step'] = 1;
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['loop']-1;
-if ($_smarty_tpl->tpl_vars['smarty']->value['section']['id']['show']) {
-    $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['loop'];
-    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['id']['total'] == 0)
-        $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['show'] = false;
-} else
-    $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['total'] = 0;
-if ($_smarty_tpl->tpl_vars['smarty']->value['section']['id']['show']):
-
-            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['id']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['iteration'] = 1;
-                 $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['total'];
-                 $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['iteration']++):
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['iteration'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['step'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['step'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['id']['iteration'] == 1);
-$_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['id']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['total']);
+<?php  $_smarty_tpl->tpl_vars['id'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['id']->_loop = false;
+ $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['u_id']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['id']->key => $_smarty_tpl->tpl_vars['id']->value) {
+$_smarty_tpl->tpl_vars['id']->_loop = true;
+ $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['id']->key;
 ?>
-
 <td class="profil-m">
-<a href="profil/<?php echo $_smarty_tpl->tpl_vars['u_loginn']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-/<?php echo $_smarty_tpl->tpl_vars['u_id']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+<a href="profil/<?php echo $_smarty_tpl->tpl_vars['u_loginn']->value[$_smarty_tpl->tpl_vars['k']->value];?>
+/<?php echo $_smarty_tpl->tpl_vars['u_id']->value[$_smarty_tpl->tpl_vars['k']->value];?>
 /" style="text-decoration:none;" onmouseover="return overlib('<?php echo $_smarty_tpl->tpl_vars['lang']->value[12];?>
  <?php echo $_smarty_tpl->tpl_vars['u_wiek']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 <br/><?php echo $_smarty_tpl->tpl_vars['lang']->value[13];?>
@@ -457,24 +441,27 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['id']['last']       = ($_smar
 <br/><?php echo $_smarty_tpl->tpl_vars['lang']->value[15];?>
  <?php echo $_smarty_tpl->tpl_vars['u_plec']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
 ', CAPTION, '<b><center><?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-</center>');" onmouseout="return nd();"><?php if ($_smarty_tpl->tpl_vars['u_img']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]=='') {?><?php if ($_smarty_tpl->tpl_vars['u_plecnr']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]=="1") {?><img src="<?php echo $_smarty_tpl->tpl_vars['site_url']->value;?>
-images/women.jpg" alt="<?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+</center>');" onmouseout="return nd();"><?php if ($_smarty_tpl->tpl_vars['u_img']->value[$_smarty_tpl->tpl_vars['k']->value]=='') {?><?php if ($_smarty_tpl->tpl_vars['u_plecnr']->value[$_smarty_tpl->tpl_vars['k']->value]=="1") {?><img src="<?php echo $_smarty_tpl->tpl_vars['site_url']->value;?>
+images/women.jpg" alt="<?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->tpl_vars['k']->value];?>
 " /><?php } else { ?><img src="<?php echo $_smarty_tpl->tpl_vars['site_url']->value;?>
-images/men.jpg" alt="<?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
+images/men.jpg" alt="<?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->tpl_vars['k']->value];?>
 " /><?php }?><?php } else { ?><img src="<?php echo $_smarty_tpl->tpl_vars['site_url']->value;?>
-upload/zdjecia/<?php echo $_smarty_tpl->tpl_vars['u_img']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-" alt="<?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-" /><?php }?><br/><center><?php if ($_smarty_tpl->tpl_vars['u_online']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]>=1) {?><img src="images/online.jpg" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value[16];?>
-" key="On"><?php } else { ?><img src="images/ofline.jpg" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value[17];?>
-" key="Off"><?php }?><b><?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']];?>
-</b><?php if ($_smarty_tpl->tpl_vars['u_vip']->value[$_smarty_tpl->getVariable('smarty')->value['section']['id']['index']]>=$_smarty_tpl->tpl_vars['gtime']->value) {?><?php echo $_smarty_tpl->tpl_vars['lang']->value[700];?>
-<?php }?></center></a></td><?php if ($_smarty_tpl->tpl_vars['nrip']->value++%5==0) {?></tr><?php }?>
+upload/zdjecia/<?php echo $_smarty_tpl->tpl_vars['u_img']->value[$_smarty_tpl->tpl_vars['k']->value];?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->tpl_vars['k']->value];?>
+" /><?php }?><br/><center><?php if ($_smarty_tpl->tpl_vars['u_online']->value[$_smarty_tpl->tpl_vars['k']->value]>=1) {?><img src="images/online.jpg" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value[16];?>
+" key="On"><?php } else { ?><img src="images/ofline.jpg"  alt="Offline" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value[17];?>
+" key="Off"><?php }?><b><?php echo $_smarty_tpl->tpl_vars['u_login']->value[$_smarty_tpl->tpl_vars['k']->value];?>
+</b><?php if ($_smarty_tpl->tpl_vars['u_vip']->value[$_smarty_tpl->tpl_vars['k']->value]>=$_smarty_tpl->tpl_vars['gtime']->value) {?><?php echo $_smarty_tpl->tpl_vars['lang']->value[700];?>
+<?php }?></center></a></td>
+<?php if ($_smarty_tpl->tpl_vars['k']->value%5==4) {?></tr><?php }?>
+<?php if ($_smarty_tpl->tpl_vars['k']->value%5==4&&$_smarty_tpl->tpl_vars['k']->value!=14) {?><tr><?php }?>
 
-<?php endfor; endif; ?>
+
+<?php } ?>
+<?php if ($_smarty_tpl->tpl_vars['k']->value%5!=4) {?></tr><?php }?>
 </table>
 </center>
 		</div>
-		  </p>
 
 </div>
 <!-- Gdy nie zalogowany -->

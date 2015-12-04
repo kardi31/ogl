@@ -15,12 +15,16 @@
 {if $ao==0}<b>Brak użytkowników online.</b>{/if}
 <table >
 <tr>
+                {$k=0}
 {section name=id loop=$u_id}
 
 <td class="profil-m">
-<a href="profil/{$u_loginn[id]}/{$u_id[id]}/" style="text-decoration:none;" onmouseover="return overlib('{$lang[12]} {$u_wiek[id]}<br/>{$lang[13]} {$u_miasto[id]}<br/>{$lang[14]} {$u_woj[id]}<br/>{$lang[15]} {$u_plec[id]}', CAPTION, '<b><center>{$u_login[id]}</center>');" onmouseout="return nd();">{if $u_img[id]==""}{if $u_plecnr[id]=="1"}<img src="{$site_url}images/women.jpg" alt="{$u_login[id]}" />{else}<img src="{$site_url}images/men.jpg" alt="{$u_login[id]}" />{/if}{else}<img src="{$site_url}upload/zdjecia/{$u_img[id]}" alt="{$u_login[id]}" />{/if}<br/><center>{if $u_online[id]>=1}<img src="images/online.jpg" title="{$lang[16]}" key="On">{else}<img src="images/ofline.jpg" title="{$lang[17]}" key="Off">{/if}<b>{$u_login[id]}</b>{if $u_vip[id]>=$gtime}{$lang[700]}{/if}</center></a></td>{if $nrip++%5==0}</tr>{/if}
-
-{/section}
+<a href="profil/{$u_loginn[id]}/{$u_id[id]}/" style="text-decoration:none;" onmouseover="return overlib('{$lang[12]} {$u_wiek[id]}<br/>{$lang[13]} {$u_miasto[id]}<br/>{$lang[14]} {$u_woj[id]}<br/>{$lang[15]} {$u_plec[id]}', CAPTION, '<b><center>{$u_login[id]}</center>');" onmouseout="return nd();">{if $u_img[id]==""}{if $u_plecnr[id]=="1"}<img src="{$site_url}images/women.jpg" alt="{$u_login[id]}" />{else}<img src="{$site_url}images/men.jpg" alt="{$u_login[id]}" />{/if}{else}<img src="{$site_url}upload/zdjecia/{$u_img[id]}" alt="{$u_login[id]}" />{/if}<br/><center>{if $u_online[id]>=1}<img src="images/online.jpg" alt="Online" title="{$lang[16]}" key="On">{else}<img alt="offline" src="images/ofline.jpg" title="{$lang[17]}" key="Off">{/if}<b>{$u_login[id]}</b>{if $u_vip[id]>=$gtime}{$lang[700]}{/if}</center></a></td>
+  {if $k%5==4}</tr>{/if}
+{if $k%5==4&&$k!=14}<tr>{/if}
+{$k++}
+            {/section}
+{if $k%5!=4}</tr>{/if}
 </table>
 </center>
 

@@ -6,7 +6,7 @@
 <tr>
 
 <td width="65">
-<a href="http://youtube.pl"><img height="62" src="images/yt1.png"></a>
+<a href="http://youtube.pl"><img height="62" alt="youtube" src="images/yt1.png"></a>
 </td>
 <td width="58">
 <g:plusone size="tall" ></g:plusone>
@@ -33,7 +33,7 @@
 {/literal}
 </td>
 <td width="80">
-<a href="https://www.facebook.com/groups/697462953699939/"><img height="60" src="images/zfacebook.png"></a>
+<a href="https://www.facebook.com/groups/697462953699939/"><img height="60" alt="facebook" src="images/zfacebook.png"></a>
 </td>
 
 
@@ -46,7 +46,7 @@
 	{if $lang_on=="1"}
 <div name="flag" style="float:left;">
 <div style="height:24px; width:65px;padding-top:4px;">
-&nbsp;&nbsp;<a href="get_lang.php?lang=pl"><img src="lang/pl/flag.gif" key="pl"></a>&nbsp;&nbsp;<a href="get_lang.php?lang=en"><img src="lang/en/flag.gif" key="en"></a>
+&nbsp;&nbsp;<a href="get_lang.php?lang=pl"><img src="lang/pl/flag.gif" alt="pl" key="pl"></a>&nbsp;&nbsp;<a href="get_lang.php?lang=en"><img alt="EN" src="lang/en/flag.gif" key="en"></a>
 </div></div>{/if}
 			{if $user_id>=1}
 			{else}
@@ -66,7 +66,7 @@
 				</form>
 				{if $fb_login=="1"}
 				<center>
-					<a href="fbc.php?login=fb"><img src="images/facebook_zaloguj.png"></a>
+					<a href="fbc.php?login=fb"><img alt="Zaloguj facebook" src="images/facebook_zaloguj.png"></a>
 				<center>
 				{/if}
 			</div>
@@ -124,7 +124,9 @@
                 pause: 12000,
                 randomStart: true,
                 captions: false,
-                pager: false
+                pager: false,
+                
+        controls:false
             });
             });
 </script>

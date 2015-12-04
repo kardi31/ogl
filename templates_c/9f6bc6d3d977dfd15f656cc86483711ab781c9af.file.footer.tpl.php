@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-12-01 10:56:41
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-04 15:37:05
          compiled from ".\templates\new_red\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23476564e1eb4193c34-22035708%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9f6bc6d3d977dfd15f656cc86483711ab781c9af' => 
     array (
       0 => '.\\templates\\new_red\\footer.tpl',
-      1 => 1448962702,
+      1 => 1449239820,
       2 => 'file',
     ),
   ),
@@ -87,6 +87,8 @@ $_smarty_tpl->tpl_vars['ad']->_loop = true;
         slideWidth: 300,
         auto: true,
         pause: 12000,
+        
+        controls:false,
         randomStart: true,
         captions: false,
         pager: false
@@ -94,7 +96,6 @@ $_smarty_tpl->tpl_vars['ad']->_loop = true;
 </script>
 	</div>
 
-</div>
 
 <div class="site_footer">
 	<div class="site_footer_left">
@@ -103,9 +104,7 @@ $_smarty_tpl->tpl_vars['ad']->_loop = true;
 </a></li>
 			<li><a href="polityka/"><?php echo $_smarty_tpl->tpl_vars['lang']->value[600];?>
 </a></li>
-			<li><a href="<?php echo $_smarty_tpl->tpl_vars['site_url']->value;?>
-faq/"><?php echo $_smarty_tpl->tpl_vars['lang']->value[8];?>
-</a></li>
+
 			<li><a href="<?php echo $_smarty_tpl->tpl_vars['site_url']->value;?>
 kontakt/"><?php echo $_smarty_tpl->tpl_vars['lang']->value[9];?>
 </a></li>

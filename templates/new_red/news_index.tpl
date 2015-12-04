@@ -6,10 +6,10 @@
 		<div class="left">
 	
 	
-		
+                    <h1 style="font-size:22px;font-weight:bold;border-bottom:0px;">Aktualności</h1>
 {section name=id loop=$news_id}
 	
-<h1 class="ng"><a href="news/{$news_id[id]}/{$news_tytul_n[id]}">{$news_tytul[id]}</a></h1>
+<h2 class="ng" ><a href="news/{$news_id[id]}/{$news_tytul_n[id]}">{$news_tytul[id]}</a></h2>
 <p>
 {$news_tresc[id]}
 </p>

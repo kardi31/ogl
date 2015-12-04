@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-12-01 10:56:40
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-04 15:20:43
          compiled from ".\templates\new_red\subheader.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11937564e1eb3d8e492-40904968%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9fb95e21a9ed795f64170dfc4539d7b53efa83e2' => 
     array (
       0 => '.\\templates\\new_red\\subheader.tpl',
-      1 => 1448901389,
+      1 => 1449236765,
       2 => 'file',
     ),
   ),
@@ -39,17 +39,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <meta http-equiv="content-type" content="text/html; charset=<?php echo $_smarty_tpl->tpl_vars['lang']->value[0];?>
 " />
 
-<title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+<title>
+    <?php if (($_smarty_tpl->tpl_vars['title']->value=='Ogłoszenia towarzyskie')) {?>
+        
+        Poznaj swoją drugą połówkę 
+        <?php } else { ?>
+    <?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+
+<?php }?>
 </title>
 <meta name="keywords" content="<?php echo $_smarty_tpl->tpl_vars['meta_key']->value;?>
 " />
-<meta name="description" content="<?php if ($_smarty_tpl->tpl_vars['omnie']->value!=''&&!is_array($_smarty_tpl->tpl_vars['omnie']->value)) {?><?php echo substr(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['omnie']->value),0,250);?>
+<meta name="description" content="
+      
+    <?php if (($_smarty_tpl->tpl_vars['title']->value!='Ogłoszenia towarzyskie')) {?>
+<?php if ($_smarty_tpl->tpl_vars['omnie']->value!=''&&!is_array($_smarty_tpl->tpl_vars['omnie']->value)) {?><?php echo substr(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['omnie']->value),0,250);?>
 <?php } else { ?><?php echo $_smarty_tpl->tpl_vars['meta_desc']->value;?>
-<?php }?>" />
+<?php }?>
+    <?php } else { ?>
+        <?php echo $_smarty_tpl->tpl_vars['meta_desc']->value;?>
+
+    <?php }?>
+" />
 
 
 
-<link href="/js/multiple-select-master/multiple-select.css" rel="stylesheet" type="text/css" />
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/function.js"></script>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/smoothness/jquery-ui.css" />

@@ -112,7 +112,7 @@
 </form>
 {if $fb_login=="1"}
 <center>
-	<a href="fbc.php?login=fb"><img src="images/facebook_zaloguj.png"></a>
+	<a href="fbc.php?login=fb"><img src="images/facebook_zaloguj.png" alt="Facebook zaloguj"></a>
 <center>
 {/if}
 <br/>

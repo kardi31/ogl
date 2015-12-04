@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-12-01 13:35:17
+<?php /* Smarty version Smarty-3.1.15, created on 2015-12-04 15:20:43
          compiled from ".\templates\new_red\top.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6342564e1eb3e5f9e5-92834062%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9a62ca49d87a81ee637cb3194fa055ba387570ed' => 
     array (
       0 => '.\\templates\\new_red\\top.tpl',
-      1 => 1448973191,
+      1 => 1449237573,
       2 => 'file',
     ),
   ),
@@ -45,7 +45,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <tr>
 
 <td width="65">
-<a href="http://youtube.pl"><img height="62" src="images/yt1.png"></a>
+<a href="http://youtube.pl"><img height="62" alt="youtube" src="images/yt1.png"></a>
 </td>
 <td width="58">
 <g:plusone size="tall" ></g:plusone>
@@ -72,7 +72,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 </td>
 <td width="80">
-<a href="https://www.facebook.com/groups/697462953699939/"><img height="60" src="images/zfacebook.png"></a>
+<a href="https://www.facebook.com/groups/697462953699939/"><img height="60" alt="facebook" src="images/zfacebook.png"></a>
 </td>
 
 
@@ -85,7 +85,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<?php if ($_smarty_tpl->tpl_vars['lang_on']->value=="1") {?>
 <div name="flag" style="float:left;">
 <div style="height:24px; width:65px;padding-top:4px;">
-&nbsp;&nbsp;<a href="get_lang.php?lang=pl"><img src="lang/pl/flag.gif" key="pl"></a>&nbsp;&nbsp;<a href="get_lang.php?lang=en"><img src="lang/en/flag.gif" key="en"></a>
+&nbsp;&nbsp;<a href="get_lang.php?lang=pl"><img src="lang/pl/flag.gif" alt="pl" key="pl"></a>&nbsp;&nbsp;<a href="get_lang.php?lang=en"><img alt="EN" src="lang/en/flag.gif" key="en"></a>
 </div></div><?php }?>
 			<?php if ($_smarty_tpl->tpl_vars['user_id']->value>=1) {?>
 			<?php } else { ?>
@@ -105,7 +105,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</form>
 				<?php if ($_smarty_tpl->tpl_vars['fb_login']->value=="1") {?>
 				<center>
-					<a href="fbc.php?login=fb"><img src="images/facebook_zaloguj.png"></a>
+					<a href="fbc.php?login=fb"><img alt="Zaloguj facebook" src="images/facebook_zaloguj.png"></a>
 				<center>
 				<?php }?>
 			</div>
@@ -172,7 +172,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 pause: 12000,
                 randomStart: true,
                 captions: false,
-                pager: false
+                pager: false,
+                
+        controls:false
             });
             });
 </script>

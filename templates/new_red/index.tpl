@@ -19,7 +19,7 @@
 <!-- Gdy zalogowany -->
       <div class="left">
 		
-		<h1 class="ng">{$lang[11]}</h1><p>
+		<h1 class="ng">{$lang[11]}</h1>
 
 <center>
 <table >
@@ -27,14 +27,14 @@
 {section name=id loop=$u_id}
 
 <td class="profil-m">
-<a href="profil/{$u_loginn[id]}/{$u_id[id]}/" style="text-decoration:none;" onmouseover="return overlib('{$lang[12]} {$u_wiek[id]}<br/>{$lang[13]} {$u_miasto[id]}<br/>{$lang[14]} {$u_woj[id]}<br/>{$lang[15]} {$u_plec[id]}', CAPTION, '<b><center>{$u_login[id]}</center>');" onmouseout="return nd();">{if $u_img[id]==""}{if $u_plecnr[id]=="1"}<img src="{$site_url}images/women.jpg" alt="{$u_login[id]}" />{else}<img src="{$site_url}images/men.jpg" alt="{$u_login[id]}" />{/if}{else}<img src="{$site_url}upload/zdjecia/{$u_img[id]}" alt="{$u_login[id]}" />{/if}<br/><center>{if $u_online[id]>=1}<img src="images/online.jpg" title="{$lang[16]}" key="On">{else}<img src="images/ofline.jpg" title="{$lang[17]}" key="Off">{/if}<b>{$u_login[id]}</b>{if $u_vip[id]>=$gtime}{$lang[700]}{/if}</center></a></td>{if $nrip++%5==0}</tr>{/if}
-
+<a href="profil/{$u_loginn[id]}/{$u_id[id]}/" style="text-decoration:none;" onmouseover="return overlib('{$lang[12]} {$u_wiek[id]}<br/>{$lang[13]} {$u_miasto[id]}<br/>{$lang[14]} {$u_woj[id]}<br/>{$lang[15]} {$u_plec[id]}', CAPTION, '<b><center>{$u_login[id]}</center>');" onmouseout="return nd();">{if $u_img[id]==""}{if $u_plecnr[id]=="1"}<img src="{$site_url}images/women.jpg" alt="{$u_login[id]}" />{else}<img src="{$site_url}images/men.jpg" alt="{$u_login[id]}" />{/if}{else}<img src="{$site_url}upload/zdjecia/{$u_img[id]}" alt="{$u_login[id]}" />{/if}<br/><center>{if $u_online[id]>=1}<img src="images/online.jpg" title="{$lang[16]}" key="On">{else}<img src="images/ofline.jpg" alt="Offline" title="{$lang[17]}" key="Off">{/if}<b>{$u_login[id]}</b>{if $u_vip[id]>=$gtime}{$lang[700]}{/if}</center></a></td>
+{if $nrip++%5==0}</tr><tr>{/if}
 {/section}
+{if $nrip%5!=0}</tr>{/if}
 </table>
 </center>
 		
-		  </p>
-		<h1 class="ng">{$lang[18]}</h1><p>
+		<h1 class="ng">{$lang[18]}</h1>
 
 {if $bo>=1}
 <center>
@@ -43,8 +43,10 @@
 {section name=id loop=$u_ido}
 
 <td class="profil-m">
-<a href="profil/{$u_loginno[id]}/{$u_ido[id]}/" style="text-decoration:none;" onmouseover="return overlib('{$lang[12]} {$u_wieko[id]}<br/>{$lang[13]} {$u_miastoo[id]}<br/>{$lang[14]} {$u_wojo[id]}<br/>{$lang[15]} {$u_pleco[id]}', CAPTION, '<b><center>{$u_logino[id]}</center>');" onmouseout="return nd();">{if $u_imgo[id]==""}{if $u_plecnro[id]=="1"}<img src="{$site_url}images/women.jpg" alt="{$u_logino[id]}" />{else}<img src="{$site_url}images/men.jpg" alt="{$u_logino[id]}" />{/if}{else}<img src="{$site_url}upload/zdjecia/{$u_imgo[id]}" alt="{$u_logino[id]}" />{/if}<br/><center>{if $u_onlineo[id]>=1}<img src="images/online.jpg" title="{$lang[16]}" key="On">{else}<img src="images/ofline.jpg" title="{$lang[17]}" key="Off">{/if}<b>{$u_logino[id]}</b>{if $u_vipo[id]>=$gtime}{$lang[700]}{/if}</center></a></td>{if $nripp++%5==0}</tr>{/if}
+<a href="profil/{$u_loginno[id]}/{$u_ido[id]}/" style="text-decoration:none;" onmouseover="return overlib('{$lang[12]} {$u_wieko[id]}<br/>{$lang[13]} {$u_miastoo[id]}<br/>{$lang[14]} {$u_wojo[id]}<br/>{$lang[15]} {$u_pleco[id]}', CAPTION, '<b><center>{$u_logino[id]}</center>');" onmouseout="return nd();">{if $u_imgo[id]==""}{if $u_plecnro[id]=="1"}<img src="{$site_url}images/women.jpg" alt="{$u_logino[id]}" />{else}<img src="{$site_url}images/men.jpg" alt="{$u_logino[id]}" />{/if}{else}<img src="{$site_url}upload/zdjecia/{$u_imgo[id]}" alt="{$u_logino[id]}" />{/if}<br/><center>{if $u_onlineo[id]>=1}<img src="images/online.jpg" title="{$lang[16]}" key="On">{else}<img src="images/ofline.jpg" alt="Offline" title="{$lang[17]}" key="Off">{/if}<b>{$u_logino[id]}</b>{if $u_vipo[id]>=$gtime}{$lang[700]}{/if}</center></a></td>
+{if $nripp++%5==0}</tr><tr>{/if}
 
+{if $nripp%5!=0}</tr>{/if}
 {/section}
 </table>
 </center>
@@ -52,21 +54,21 @@
 <center><b>{$lang[19]}</b></center>
 {/if}
 		
-		  </p>
 	</div>
 <!-- Gdy zalogowany -->
 {else}
 <!-- Gdy nie zalogowany -->
 <div class="site_body_content_all">
 <div style="width:450px;float:left;text-align:center;">
+    <h1 style="text-decoration: none;text-align:left;border:0px;">Poznaj swoją drugą połówkę</h1>
 {if $in_txt<>""}<p>{$in_txt}</p>{/if}
-<img src="templates/{$templa}/images/in_f.jpg" key="obrazek">
+<img src="templates/{$templa}/images/in_f.jpg" alt="Poznaj swoją drugą połówke" key="obrazek">
 </div>
 
 <div style="width:450px;float:left;">
 <div class="post_all">
 			<h2 class="title_all">Rejestracja</h2>
-<div class="entry_all"><p>
+<div class="entry_all">
 {if $user_nick=="" and $rejestracja==1 and $regok!=1}
 <form action="{$site_url}register/" method="post">
 <table>
@@ -132,28 +134,29 @@
 
 </form>
 {/if}
-</p>
 </div>
 </div>
 </div>	
 
 
 <div style="width:100%;float:left;">
-		<h1 class="ng">{$lang[20]}</h1><p>
+		<h2 class="ng">{$lang[20]}</h2>
 
 <center>
 <table >
 <tr>
-{section name=id loop=$u_id}
-
+{foreach from=$u_id key=k item=id}
 <td class="profil-m">
-<a href="profil/{$u_loginn[id]}/{$u_id[id]}/" style="text-decoration:none;" onmouseover="return overlib('{$lang[12]} {$u_wiek[id]}<br/>{$lang[13]} {$u_miasto[id]}<br/>{$lang[14]} {$u_woj[id]}<br/>{$lang[15]} {$u_plec[id]}', CAPTION, '<b><center>{$u_login[id]}</center>');" onmouseout="return nd();">{if $u_img[id]==""}{if $u_plecnr[id]=="1"}<img src="{$site_url}images/women.jpg" alt="{$u_login[id]}" />{else}<img src="{$site_url}images/men.jpg" alt="{$u_login[id]}" />{/if}{else}<img src="{$site_url}upload/zdjecia/{$u_img[id]}" alt="{$u_login[id]}" />{/if}<br/><center>{if $u_online[id]>=1}<img src="images/online.jpg" title="{$lang[16]}" key="On">{else}<img src="images/ofline.jpg" title="{$lang[17]}" key="Off">{/if}<b>{$u_login[id]}</b>{if $u_vip[id]>=$gtime}{$lang[700]}{/if}</center></a></td>{if $nrip++%5==0}</tr>{/if}
+<a href="profil/{$u_loginn[$k]}/{$u_id[$k]}/" style="text-decoration:none;" onmouseover="return overlib('{$lang[12]} {$u_wiek[id]}<br/>{$lang[13]} {$u_miasto[id]}<br/>{$lang[14]} {$u_woj[id]}<br/>{$lang[15]} {$u_plec[id]}', CAPTION, '<b><center>{$u_login[id]}</center>');" onmouseout="return nd();">{if $u_img[$k]==""}{if $u_plecnr[$k]=="1"}<img src="{$site_url}images/women.jpg" alt="{$u_login[$k]}" />{else}<img src="{$site_url}images/men.jpg" alt="{$u_login[$k]}" />{/if}{else}<img src="{$site_url}upload/zdjecia/{$u_img[$k]}" alt="{$u_login[$k]}" />{/if}<br/><center>{if $u_online[$k]>=1}<img src="images/online.jpg" title="{$lang[16]}" key="On">{else}<img src="images/ofline.jpg"  alt="Offline" title="{$lang[17]}" key="Off">{/if}<b>{$u_login[$k]}</b>{if $u_vip[$k]>=$gtime}{$lang[700]}{/if}</center></a></td>
+{if $k%5==4}</tr>{/if}
+{if $k%5==4&&$k!=14}<tr>{/if}
 
-{/section}
+
+{/foreach}
+{if $k%5!=4}</tr>{/if}
 </table>
 </center>
 		</div>
-		  </p>
 
 </div>
 <!-- Gdy nie zalogowany -->

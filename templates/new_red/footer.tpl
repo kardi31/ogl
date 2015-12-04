@@ -25,6 +25,8 @@
         slideWidth: 300,
         auto: true,
         pause: 12000,
+        
+        controls:false,
         randomStart: true,
         captions: false,
         pager: false
@@ -32,14 +34,13 @@
 </script>
 	</div>
 
-</div>
 
 <div class="site_footer">
 	<div class="site_footer_left">
 		<ul class="footer_menu">
 			<li><a href="regulamin/">{$lang[645]}</a></li>
 			<li><a href="polityka/">{$lang[600]}</a></li>
-			<li><a href="{$site_url}faq/">{$lang[8]}</a></li>
+{*			<li><a href="{$site_url}faq/">{$lang[8]}</a></li>*}
 			<li><a href="{$site_url}kontakt/">{$lang[9]}</a></li>
 		</ul>
 	</div>
